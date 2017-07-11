@@ -1,0 +1,9 @@
+logs/*
+!.gitkeep
+node_modules
+.DS_Store
+.idea
+dist
+.tmp
+.sass-cache
+libs

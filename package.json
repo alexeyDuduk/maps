@@ -1,0 +1,30 @@
+{
+  "name": "material",
+  "version": "1.0.0",
+  "description": "esri-maps-demo",
+  "author": "leshaduduk",
+  "license": "OPEN",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.0",
+    "gulp-concat": "2.6.0",
+    "gulp-copy": "0.0.2",
+    "gulp-cssnano": "2.1.2",
+    "gulp-rename": "1.2.2",
+    "gulp-sass": "2.3.2",
+    "gulp-uglify": "1.5.4",
+    "gulp-util": "3.0.7"
+  },
+  "devDependencies": {
+    "browser-sync": "2.17.3",
+    "gulp-eslint": "^4.0.0",
+    "gulp-jshint": "2.0.1",
+    "gulp-notify": "2.2.0",
+    "jshint": "2.9.2",
+    "jshint-stylish": "2.2.0"
+  }
+}

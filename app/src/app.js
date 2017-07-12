@@ -23,7 +23,9 @@ require([
 
 
     function init() {
+        //const pointsProvider = new EM.HyderabadDataProvider();
         const pointsProvider = new EM.MinskDataProvider();
+
         pointsProvider.get().then((points) => {
             let cameraProvider = new EM.CameraProvider(points);
 

@@ -4368,7 +4368,7 @@
                 53.929394,
                 27.631152
             ]
-        ];
+        ].slice(150);
 
         class MinskDataProvider {
             get() {

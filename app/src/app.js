@@ -24,8 +24,7 @@ require([
 
     function init() {
         const pointsProvider = new EM.MinskDataProvider();
-        pointsProvider.get().then((result) => {
-            let points = result;
+        pointsProvider.get().then((points) => {
             let cameraProvider = new EM.CameraProvider(points);
 
             let map = new Map({
@@ -33,10 +32,13 @@ require([
                 ground: 'world-elevation'
             });
 
+            let camera = cameraProvider.getInitialCamera();
             let view = new SceneView({
-                camera: cameraProvider.getInitialViewCamera(),
+                center: camera.center,
                 container: 'view-div',
-                map: map
+                map: map,
+                zoom: camera.zoom,
+                tilt: camera.tilt
             });
 
             let lineSymbol = new LineSymbol3D({
@@ -45,7 +47,7 @@ require([
                         material: {
                             color: [226, 119, 40]
                         },
-                        size: 2
+                        size: 4
                     })
                 ]
             });
@@ -61,8 +63,6 @@ require([
 
             let routeRenderer = new EM.CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
-
-            //routeRenderer = new EM.InitialCameraDrivenRendererWrapper(view, routeRenderer, cameraProvider);
 
             view.then(() =>
                 setTimeout(() => routeRenderer.draw(points, 10), 5000)

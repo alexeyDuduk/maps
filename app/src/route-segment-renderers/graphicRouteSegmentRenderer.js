@@ -5,19 +5,29 @@
         'esri/geometry/Polyline',
         'esri/Graphic'
     ], (Polyline, Graphic) => {
-        let lastPath = null;
-
-
         class GraphicRouteSegmentRenderer {
             constructor(view, lineSymbol, lineAtt) {
                 this._view = view;
                 this._lineSymbol = lineSymbol;
                 this._lineAtt = lineAtt;
+                this._lastPath = null;
             }
 
             addPoint(point) {
-                let path = lastPath ? [_.last(lastPath), point] : [point];
+                let path = this._lastPath ? [_.last(this._lastPath), point] : [point];
 
+                this._addPath(path);
+            }
+
+            addPath(points) {
+                if (this._lastPath) {
+                    points.unshift(_.last(this._lastPath));
+                }
+
+                this._addPath(points);
+            }
+
+            _addPath (path) {
                 let p = new Polyline({
                     paths: path
                     //hasZ: true
@@ -28,7 +38,7 @@
                     attributes: this._lineAtt
                 });
                 this._view.graphics.add(g);
-                lastPath = p.paths[0];
+                this._lastPath = p.paths[0];
             }
         }
 

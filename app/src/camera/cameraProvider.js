@@ -5,18 +5,17 @@
         const DEFAULT_ZOOM = 16;
 
         class CameraProvider {
-            constructor(points) {
-                this._points = points;
+            constructor(segmentGenerator) {
+                this._segmentGenerator = segmentGenerator;
                 this._latSum = 0;
                 this._lngSum = 0;
                 this._count = 0;
-                this._pointsToRemember = Math.floor(points.length / 5);
-
-                //_.each(points.slice(0, 5), (point) => this._rememberPoint(point));
+                this._pointsToRemember = 20;
+                this._pointsCache = [];
             }
 
             getInitialCamera() {
-                let point = this._points[0];
+                let point = this._segmentGenerator.getInitialPoint();
 
                 return {
                     center: point.slice(0, 2),
@@ -29,7 +28,7 @@
             getCamera(point) {
                 this._rememberPoint(point);
                 if (this._count > this._pointsToRemember) {
-                    this._forgetPoint(this._points[this._count - this._pointsToRemember - 1]);
+                    this._forgetFirstPoint();
                 }
 
                 return {
@@ -42,18 +41,20 @@
 
             getTotalViewCamera() {
                 return {
-                    target: this._points,
+                    target: this._segmentGenerator.getPoints(),
                     tilt: 30
                 };
             }
 
             _rememberPoint(point) {
+                this._pointsCache.push(point);
                 this._latSum += point[0];
                 this._lngSum += point[1];
                 this._count++;
             }
 
-            _forgetPoint(point) {
+            _forgetFirstPoint() {
+                let point = this._pointsCache.shift();
                 this._latSum -= point[0];
                 this._lngSum -= point[1];
                 this._count--;

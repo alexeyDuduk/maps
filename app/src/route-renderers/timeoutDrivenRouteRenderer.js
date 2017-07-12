@@ -7,18 +7,15 @@
                 this._segmentRenderer = segmentRenderer;
             }
 
-            draw(points, delay) {
-                let pointsProvider = points[Symbol.iterator]();
+            draw(segmentGenerator, delay) {
                 let intervalId = setInterval(function () {
                     try {
-                        let { value: point } = pointsProvider.next();
-
-                        if (!point) {
+                        if (!segmentGenerator.moveToNext()) {
                             clearInterval(intervalId);
                             intervalId = null;
                             return;
                         }
-                        this._segmentRenderer.addPoint(point);
+                        this._segmentRenderer.addPath(segmentGenerator.getSegment());
                     }
                     catch (e) {
                         console.log(e);

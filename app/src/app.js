@@ -28,7 +28,8 @@ require([
         const pointsProvider = new EM.GpsiesDataProvider('bayreuth-10k');
 
         pointsProvider.get().then((points) => {
-            let cameraProvider = new EM.CameraProvider(points);
+            let segmentGenerator = createRouteSegmentGenerator(points);
+            let cameraProvider = new EM.CameraProvider(segmentGenerator);
 
             let map = new Map({
                 basemap: 'hybrid',
@@ -68,48 +69,17 @@ require([
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
 
             view.then(() =>
-                setTimeout(() => routeRenderer.draw(points, 10), 5000)
+                setTimeout(() => routeRenderer.draw(segmentGenerator, 10), 5000)
             );
         });
     }
 
-    function fillWithIntermediatePoints(points, bits) {
-        let result = [];
+    function createRouteSegmentGenerator(points) {
+        const MAX_POINTS_COUNT = 400;
+        let step = Math.floor(points.length / MAX_POINTS_COUNT);
 
-        points.forEach(function (item, index) {
-            if (!index) {
-                result.push(item);
-                return;
-            }
-            let bitIndex = 1;
-            let previousItem = points[index - 1];
-            let kx = item[0] - previousItem[0];
-            let ky = item[1] - previousItem[1];
-
-            while (bitIndex <= bits) {
-                let ratio = bitIndex / bits;
-
-                result.push([
-                    previousItem[0] + kx * ratio,
-                    previousItem[1] + ky * ratio
-                ]);
-                bitIndex++;
-            }
-        });
-
-        return result;
-    }
-
-    function generateRandomPoint() {
-        let latMin = -90;
-        let latMax = 90;
-        let longMin = -180;
-        let longMax = 180;
-
-        function randomFromRange(from, to) {
-            return Math.random() * (to - from) + from;
-        }
-
-        return [randomFromRange(longMin, longMax), randomFromRange(latMin, latMax)];
+        return step ?
+            new EM.PathSegmentGenerator(points, step) :
+            new EM.PointSegmentGenerator(points);
     }
 });

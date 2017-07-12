@@ -2,7 +2,7 @@
     "use strict";
 
     require(['esri/core/promiseUtils'], (promiseUtils) => {
-        const SKIP_POINTS_BY_CAMERA = 5;
+        const SKIP_POINTS_BY_CAMERA = 1;
 
         class CameraPromiseDrivenRouteRenderer {
             constructor(view, segmentRenderer, cameraProvider) {

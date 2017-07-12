@@ -32,9 +32,9 @@
                 }
 
                 return {
-                    target: this._pointsCache,
+                    target: _.takeRight(this._pointsCache, 10),
                     center: point.slice(0, 2),
-                    tilt: 45,
+                    tilt: 55,
                     heading: this._getHeading(point)
                 };
             }

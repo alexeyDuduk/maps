@@ -1,0 +1,2743 @@
+{
+  "pagination": {
+    "start": 74,
+    "pageSize": 500,
+    "totalRecordsInPage": 74,
+    "totalRecords": 0,
+    "moreAvailable": false
+  },
+  "data": [
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "3b64fbac-caa7-43b5-b4e8-9f95754dd952",
+      "speed": {
+        "unit": "KM/H",
+        "value": 35.29999923706055
+      },
+      "device_created_on": "2017-07-12T16:24:29Z",
+      "totalDistance": 3335.543538477309,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            79.131,
+            14.227
+          ]
+        },
+        "line1": "Rajampet"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T16:24:35Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "3789c2e1-c23f-45ff-b3b8-f65cc0d62d55",
+      "speed": {
+        "unit": "KM/H",
+        "value": 55.20000076293945
+      },
+      "device_created_on": "2017-07-12T15:56:40Z",
+      "totalDistance": 3330.7266082218725,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            79.1121,
+            14.2882
+          ]
+        },
+        "line1": "Nandalur"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:58:55Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "8d63fd53-5a42-42e4-bc5d-78f5b475fd3d",
+      "speed": {
+        "unit": "KM/H",
+        "value": 55.5
+      },
+      "device_created_on": "2017-07-12T15:48:39Z",
+      "totalDistance": 3326.595086644133,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            79.0677,
+            14.328
+          ]
+        },
+        "line1": "Nagireddipalli"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:48:52Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "f288c89a-498e-4235-a1b4-d65887883435",
+      "speed": {
+        "unit": "KM/H",
+        "value": 49.099998474121094
+      },
+      "device_created_on": "2017-07-12T15:44:49Z",
+      "totalDistance": 3325.2520046849627,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            79.0571,
+            14.3443
+          ]
+        },
+        "line1": "Banagangumpula"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:47:53Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "a7aeefdf-bbc2-40a5-b742-cfb334800b70",
+      "speed": {
+        "unit": "KM/H",
+        "value": 50.0
+      },
+      "device_created_on": "2017-07-12T15:33:51Z",
+      "totalDistance": 3320.097706207535,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            79.0131,
+            14.4005
+          ]
+        },
+        "line1": "Ontimitta"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:34:01Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "8310bfac-7edc-4e5e-837a-224e59f38ac3",
+      "speed": {
+        "unit": "KM/H",
+        "value": 32.70000076293945
+      },
+      "device_created_on": "2017-07-12T15:28:51Z",
+      "totalDistance": 3318.026121555165,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9846,
+            14.4111
+          ]
+        },
+        "line1": "Madras and Southern Mahratta Railway North-West Line"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:29:01Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "53feb20d-cc62-400d-8ff3-dc1890ba3146",
+      "speed": {
+        "unit": "KM/H",
+        "value": 50.20000076293945
+      },
+      "device_created_on": "2017-07-12T15:26:11Z",
+      "totalDistance": 3317.083313490222,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9706,
+            14.4115
+          ]
+        },
+        "line1": "Boggaravandlapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:26:15Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "bcc1f7ad-4666-43a7-8f64-6c5e3f0aef67",
+      "speed": {
+        "unit": "KM/H",
+        "value": 52.70000076293945
+      },
+      "device_created_on": "2017-07-12T15:25:31Z",
+      "totalDistance": 3316.713735489121,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9651,
+            14.4115
+          ]
+        },
+        "line1": "Mittapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:25:41Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "ccf9158a-b15d-4939-b8e8-6fe96bb92ba2",
+      "speed": {
+        "unit": "KM/H",
+        "value": 41.400001525878906
+      },
+      "device_created_on": "2017-07-12T15:24:31Z",
+      "totalDistance": 3316.29734285365,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9594,
+            14.4139
+          ]
+        },
+        "line1": "Sembhunipalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:24:34Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "5b1a534e-346b-4a43-a81f-552ab1c2e87d",
+      "speed": {
+        "unit": "KM/H",
+        "value": 59.20000076293945
+      },
+      "device_created_on": "2017-07-12T15:21:41Z",
+      "totalDistance": 3315.007182973292,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9409,
+            14.4184
+          ]
+        },
+        "line1": "Bhakarapeta"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:21:48Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "e3364b5e-ed21-4930-af04-0310612c0b27",
+      "speed": {
+        "unit": "KM/H",
+        "value": 57.900001525878906
+      },
+      "device_created_on": "2017-07-12T15:21:11Z",
+      "totalDistance": 3314.712272919898,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9365,
+            14.4186
+          ]
+        },
+        "line1": "Peddapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:21:14Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "01a57e3f-e1d6-47d7-9b7b-af3e64753e79",
+      "speed": {
+        "unit": "KM/H",
+        "value": 57.099998474121094
+      },
+      "device_created_on": "2017-07-12T15:21:01Z",
+      "totalDistance": 3314.6081621478047,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.935,
+            14.419
+          ]
+        },
+        "line1": "Kappasela Konda"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:21:13Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "ab70059d-f1a4-4b67-a6c9-e756478937be",
+      "speed": {
+        "unit": "KM/H",
+        "value": 53.599998474121094
+      },
+      "device_created_on": "2017-07-12T15:19:11Z",
+      "totalDistance": 3313.5385333312843,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9248,
+            14.4305
+          ]
+        },
+        "line1": "Kanamalopalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:20:55Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "22d1a78a-df6b-483f-948f-9d51a2ffcbce",
+      "speed": {
+        "unit": "KM/H",
+        "value": 58.20000076293945
+      },
+      "device_created_on": "2017-07-12T15:17:31Z",
+      "totalDistance": 3312.5397436194494,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.9108,
+            14.4341
+          ]
+        },
+        "line1": "Siddhavattam Railroad Station"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:17:43Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "20315ed6-cf1a-4bc4-8c3c-01cbdda55bc5",
+      "speed": {
+        "unit": "KM/H",
+        "value": 31.299999237060547
+      },
+      "device_created_on": "2017-07-12T15:11:31Z",
+      "totalDistance": 3310.7012716336085,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8875,
+            14.4461
+          ]
+        },
+        "line1": "Kanamalopalle Reserved Forest"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:11:36Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "c46c4e3a-47b7-4b52-a1ec-e9db45f43959",
+      "speed": {
+        "unit": "KM/H",
+        "value": 25.100000381469727
+      },
+      "device_created_on": "2017-07-12T15:08:51Z",
+      "totalDistance": 3309.8612739468344,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8787,
+            14.4547
+          ]
+        },
+        "line1": "Jambonikona Bodu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T15:09:00Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "240182d3-d2cc-4b44-807f-22f976a678b0",
+      "speed": {
+        "unit": "KM/H",
+        "value": 42.400001525878906
+      },
+      "device_created_on": "2017-07-12T14:59:31Z",
+      "totalDistance": 3307.875082490614,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.861,
+            14.4734
+          ]
+        },
+        "line1": "Buddayapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:59:35Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "a08f71ac-17a8-425a-bed8-fb4cbdc56ab8",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.20000076293945
+      },
+      "device_created_on": "2017-07-12T14:59:01Z",
+      "totalDistance": 3307.6432876504086,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8584,
+            14.4756
+          ]
+        },
+        "line1": "Chinnachauku"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:59:12Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "f8b09457-9b90-41b2-a82d-05161923726c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 41.400001525878906
+      },
+      "device_created_on": "2017-07-12T14:55:21Z",
+      "totalDistance": 3305.941916698735,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8461,
+            14.4969
+          ]
+        },
+        "line1": "Ukkayapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:55:30Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "bbfb2c7c-1866-48b0-8b36-97bd933a9f63",
+      "speed": {
+        "unit": "KM/H",
+        "value": 42.79999923706055
+      },
+      "device_created_on": "2017-07-12T14:55:01Z",
+      "totalDistance": 3305.8001269122224,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8453,
+            14.4988
+          ]
+        },
+        "line1": "Devunicuddapah"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:55:08Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0c2f0cbf-2d48-4cce-9898-b30f0cf7fd70",
+      "speed": {
+        "unit": "KM/H",
+        "value": 49.0
+      },
+      "device_created_on": "2017-07-12T14:54:11Z",
+      "totalDistance": 3305.389867919539,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.843,
+            14.5043
+          ]
+        },
+        "line1": "Patacudapah"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:54:23Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "da072895-8654-484d-a22d-a4da406031b2",
+      "speed": {
+        "unit": "KM/H",
+        "value": 53.0
+      },
+      "device_created_on": "2017-07-12T14:51:01Z",
+      "totalDistance": 3303.8254994578074,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8216,
+            14.5082
+          ]
+        },
+        "line1": "Modamidipalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:51:04Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "20f9aa9d-0aaa-4e5a-bd4e-36067d6bff5c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 55.29999923706055
+      },
+      "device_created_on": "2017-07-12T14:49:31Z",
+      "totalDistance": 3303.0711467724554,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.8107,
+            14.5093
+          ]
+        },
+        "line1": "Palampalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:49:35Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "74ca7366-927d-4477-825d-26101fea6c01",
+      "speed": {
+        "unit": "KM/H",
+        "value": 35.79999923706055
+      },
+      "device_created_on": "2017-07-12T14:47:21Z",
+      "totalDistance": 3302.00421368667,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.7955,
+            14.5086
+          ]
+        },
+        "line1": "Bachatipalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:47:33Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "60a0df7c-897a-424e-bed7-90ed68498879",
+      "speed": {
+        "unit": "KM/H",
+        "value": 38.20000076293945
+      },
+      "device_created_on": "2017-07-12T14:44:41Z",
+      "totalDistance": 3301.2324737260724,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.786,
+            14.5126
+          ]
+        },
+        "line1": "Bellary-Cuddapah Road"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:44:46Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0cc4bec4-e32d-4cee-af2c-3df5dc231d6a",
+      "speed": {
+        "unit": "KM/H",
+        "value": 31.299999237060547
+      },
+      "device_created_on": "2017-07-12T14:42:51Z",
+      "totalDistance": 3300.417415504332,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.777,
+            14.5204
+          ]
+        },
+        "line1": "Cuddapah Airport"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:42:55Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "3db2fbe1-eef7-4e62-b57b-3064d2f80e7f",
+      "speed": {
+        "unit": "KM/H",
+        "value": 47.79999923706055
+      },
+      "device_created_on": "2017-07-12T14:40:01Z",
+      "totalDistance": 3299.187272581524,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.7631,
+            14.532
+          ]
+        },
+        "line1": "Razakmian Kottalu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:40:08Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "28301f58-1bc6-41f4-bab5-728dff1612c3",
+      "speed": {
+        "unit": "KM/H",
+        "value": 51.79999923706055
+      },
+      "device_created_on": "2017-07-12T14:36:51Z",
+      "totalDistance": 3297.615725891449,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.7445,
+            14.5458
+          ]
+        },
+        "line1": "Tollaganganapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:37:04Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "142dbf03-feaf-4a00-8de9-3055dfc0536e",
+      "speed": {
+        "unit": "KM/H",
+        "value": 49.29999923706055
+      },
+      "device_created_on": "2017-07-12T14:29:41Z",
+      "totalDistance": 3294.0929565810306,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.7035,
+            14.5767
+          ]
+        },
+        "line1": "Valluru"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:29:46Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "552db242-e58e-4b00-804a-5135418aa88d",
+      "speed": {
+        "unit": "KM/H",
+        "value": 51.900001525878906
+      },
+      "device_created_on": "2017-07-12T14:27:32Z",
+      "totalDistance": 3293.00770143303,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": null,
+        "gps": {
+          "coordinates": [
+            78.6875,
+            14.5777
+          ]
+        },
+        "line1": "Papagni River"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:27:43Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "4cc12c88-3abd-4cef-b602-45634a053837",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.400001525878906
+      },
+      "device_created_on": "2017-07-12T14:17:12Z",
+      "totalDistance": 3289.181538177984,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.6335,
+            14.5895
+          ]
+        },
+        "line1": "Kamalapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:17:21Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "bce9aa4f-a1b5-40b3-adba-2101ba2161eb",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.70000076293945
+      },
+      "device_created_on": "2017-07-12T14:06:52Z",
+      "totalDistance": 3284.4841597761592,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.5718,
+            14.6186
+          ]
+        },
+        "line1": "Erragudipadu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T14:06:59Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "eb18fefe-e50c-465a-8121-5dbeeff6b666",
+      "speed": {
+        "unit": "KM/H",
+        "value": 23.5
+      },
+      "device_created_on": "2017-07-12T13:49:02Z",
+      "totalDistance": 3279.3025735120827,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.5018,
+            14.6447
+          ]
+        },
+        "line1": "Erraguntla"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:49:19Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "f12837ef-be1e-409f-8870-f81d8e36a1ae",
+      "speed": {
+        "unit": "KM/H",
+        "value": 47.400001525878906
+      },
+      "device_created_on": "2017-07-12T13:36:02Z",
+      "totalDistance": 3273.944646712229,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.4312,
+            14.6729
+          ]
+        },
+        "line1": "Kalamalla"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:36:12Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "90ed11b8-80a2-4324-a7dc-44a9cb999431",
+      "speed": {
+        "unit": "KM/H",
+        "value": 49.0
+      },
+      "device_created_on": "2017-07-12T13:21:42Z",
+      "totalDistance": 3267.9018888112773,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.3501,
+            14.7063
+          ]
+        },
+        "line1": "Muddanuru"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:21:46Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "a95dd2d5-4194-4cac-894c-06f9989bc8aa",
+      "speed": {
+        "unit": "KM/H",
+        "value": 55.20000076293945
+      },
+      "device_created_on": "2017-07-12T13:20:02Z",
+      "totalDistance": 3266.972422180553,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.3368,
+            14.71
+          ]
+        },
+        "line1": "Chitimitichintala"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:20:06Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "653ff7c4-3ff0-4e95-b786-ae3da63807b3",
+      "speed": {
+        "unit": "KM/H",
+        "value": 48.20000076293945
+      },
+      "device_created_on": "2017-07-12T13:14:12Z",
+      "totalDistance": 3263.8451333241724,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2961,
+            14.7311
+          ]
+        },
+        "line1": "Gandikota South Reserved Forest"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:15:19Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "de82411d-5cb2-4519-bcb9-d66c886287a6",
+      "speed": {
+        "unit": "KM/H",
+        "value": 45.599998474121094
+      },
+      "device_created_on": "2017-07-12T13:07:42Z",
+      "totalDistance": 3261.6382494003437,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2691,
+            14.7485
+          ]
+        },
+        "line1": "Mangapatnam"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:07:52Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "ad0aa796-9901-4d6a-8e85-ce9c0ec3b90b",
+      "speed": {
+        "unit": "KM/H",
+        "value": 54.70000076293945
+      },
+      "device_created_on": "2017-07-12T13:06:22Z",
+      "totalDistance": 3260.934854981846,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2595,
+            14.7522
+          ]
+        },
+        "line1": "Chintala Kona"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:06:34Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "88973676-13d0-4a55-b0d0-23399c807fa2",
+      "speed": {
+        "unit": "KM/H",
+        "value": 52.29999923706055
+      },
+      "device_created_on": "2017-07-12T13:02:42Z",
+      "totalDistance": 3258.9520597016804,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2318,
+            14.7616005
+          ]
+        },
+        "line1": "Obalapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:02:52Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "652748cc-4109-432c-9499-f439dd1d7bf4",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.400001525878906
+      },
+      "device_created_on": "2017-07-12T13:01:52Z",
+      "totalDistance": 3258.518306461735,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2268,
+            14.7656
+          ]
+        },
+        "line1": "Raghavapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:02:07Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "01ef6303-d407-419f-ab30-72c0dd04d98f",
+      "speed": {
+        "unit": "KM/H",
+        "value": 56.5
+      },
+      "device_created_on": "2017-07-12T13:00:32Z",
+      "totalDistance": 3257.790732766622,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Cuddapah",
+          "id": 1273801
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2184,
+            14.7723
+          ]
+        },
+        "line1": "Gandlur"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:01:58Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0b1ee241-342a-464c-9b16-278dcd7e629e",
+      "speed": {
+        "unit": "KM/H",
+        "value": 32.400001525878906
+      },
+      "device_created_on": "2017-07-12T12:58:42Z",
+      "totalDistance": 3256.903830276929,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.2082,
+            14.7805
+          ]
+        },
+        "line1": "Sitaramapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:01:48Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "01e8097d-ad6a-4ded-8d0c-509294fc6cfd",
+      "speed": {
+        "unit": "KM/H",
+        "value": 53.5
+      },
+      "device_created_on": "2017-07-12T12:55:12Z",
+      "totalDistance": 3255.1019329722867,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.1967,
+            14.8036
+          ]
+        },
+        "line1": "Chautapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T13:01:26Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "94a96d71-0e84-4260-9c62-5f5f271b3991",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.79999923706055
+      },
+      "device_created_on": "2017-07-12T12:48:42Z",
+      "totalDistance": 3251.7122998392438,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.156,
+            14.8318
+          ]
+        },
+        "line1": "Dattapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:48:50Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "b8962e06-0b46-42c5-9131-f548499d6ee6",
+      "speed": {
+        "unit": "KM/H",
+        "value": 42.0
+      },
+      "device_created_on": "2017-07-12T12:43:02Z",
+      "totalDistance": 3249.961326928358,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.1321,
+            14.8388
+          ]
+        },
+        "line1": "Tallaproddaturu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:45:32Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0fd45913-53ae-4415-9a9a-be21654dd21a",
+      "speed": {
+        "unit": "KM/H",
+        "value": 32.900001525878906
+      },
+      "device_created_on": "2017-07-12T12:39:13Z",
+      "totalDistance": 3248.520526547548,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.1115,
+            14.844
+          ]
+        },
+        "line1": "Sugumanchipalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:43:20Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "f4695318-1679-4aab-b4eb-7ef335902432",
+      "speed": {
+        "unit": "KM/H",
+        "value": 42.900001525878906
+      },
+      "device_created_on": "2017-07-12T12:35:23Z",
+      "totalDistance": 3247.2464166425125,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0944,
+            14.852
+          ]
+        },
+        "line1": "Bondeladinne"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:39:59Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "758bb205-c8af-43c7-9444-1c5ea6f68203",
+      "speed": {
+        "unit": "KM/H",
+        "value": 50.79999923706055
+      },
+      "device_created_on": "2017-07-12T12:33:43Z",
+      "totalDistance": 3246.405774455719,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Anantapur",
+          "id": 1278673
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.083,
+            14.8571
+          ]
+        },
+        "line1": "Vanganuru"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:38:31Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "6d1298bc-5bc5-4d94-95db-82e820d014cc",
+      "speed": {
+        "unit": "KM/H",
+        "value": 54.5
+      },
+      "device_created_on": "2017-07-12T12:33:33Z",
+      "totalDistance": 3246.312269810404,
+      "address": {
+        "country": "IN",
+        "city": {
+          "name": "Anantapur",
+          "id": 1278673
+        },
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0818,
+            14.8578
+          ]
+        },
+        "line1": "Vanganuru"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:38:25Z",
+      "status": {
+        "id": 100165,
+        "value": "En route",
+        "key": "2105"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "dbc7bce6-1c89-4edd-9faa-43b64a5342dc",
+      "speed": {
+        "unit": "KM/H",
+        "value": 48.79999923706055
+      },
+      "device_created_on": "2017-07-12T12:32:53Z",
+      "totalDistance": 3245.967791624781,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0772,
+            14.8601
+          ]
+        },
+        "line1": "Vanganuru"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:37:56Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "d49539e8-1ea5-4f63-8c08-d0f4ffb59960",
+      "speed": {
+        "unit": "KM/H",
+        "value": 52.79999923706055
+      },
+      "device_created_on": "2017-07-12T12:30:03Z",
+      "totalDistance": 3244.5537960461293,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0606,
+            14.8725
+          ]
+        },
+        "line1": "Vurapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:34:36Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "b8046083-bcf4-48bf-92fe-168ff029c072",
+      "speed": {
+        "unit": "KM/H",
+        "value": 54.29999923706055
+      },
+      "device_created_on": "2017-07-12T12:29:53Z",
+      "totalDistance": 3244.460896139065,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0598,
+            14.8736
+          ]
+        },
+        "line1": "Vurapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:34:17Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "36e538ff-4ff1-4fe8-8864-ee48265282e3",
+      "speed": {
+        "unit": "KM/H",
+        "value": 47.099998474121094
+      },
+      "device_created_on": "2017-07-12T12:28:43Z",
+      "totalDistance": 3243.8403198729825,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0524,
+            14.879
+          ]
+        },
+        "line1": "Jambulapadu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:33:03Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "c0c30a8a-ccaf-4442-a198-a3e7a82da373",
+      "speed": {
+        "unit": "KM/H",
+        "value": 46.400001525878906
+      },
+      "device_created_on": "2017-07-12T12:26:13Z",
+      "totalDistance": 3242.742255999879,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0395,
+            14.8888
+          ]
+        },
+        "line1": "Venkatapuram"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:30:20Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "1f320b37-38fd-4ded-81e1-1200a88f2fb6",
+      "speed": {
+        "unit": "KM/H",
+        "value": 48.70000076293945
+      },
+      "device_created_on": "2017-07-12T12:24:13Z",
+      "totalDistance": 3241.686562077712,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0272,
+            14.8984
+          ]
+        },
+        "line1": "Akkannapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:30:12Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "57491ac4-c26c-480f-a4d7-6b1e09c660e5",
+      "speed": {
+        "unit": "KM/H",
+        "value": 30.299999237060547
+      },
+      "device_created_on": "2017-07-12T12:22:13Z",
+      "totalDistance": 3240.9637770109084,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0191,
+            14.9053
+          ]
+        },
+        "line1": "Turpupalem"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:22:50Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": true,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "654789b0-caa2-450e-bbb7-ba18b1fbf79b",
+      "speed": {
+        "unit": "KM/H",
+        "value": 0.0
+      },
+      "device_created_on": "2017-07-12T12:20:43Z",
+      "totalDistance": 3240.7429890279914,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0164,
+            14.907
+          ]
+        },
+        "line1": "Sunkalammapatnam"
+      },
+      "movingStatus": 0,
+      "halt": {
+        "startTime": "2017-07-12T12:20:43Z"
+      },
+      "created_on": "2017-07-12T12:20:58Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": true,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "278e6e47-dfa6-401a-90a3-9e344788b7a4",
+      "speed": {
+        "unit": "KM/H",
+        "value": 0.0
+      },
+      "device_created_on": "2017-07-12T12:20:03Z",
+      "totalDistance": 3240.7207325507006,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0165,
+            14.9073
+          ]
+        },
+        "line1": "Sunkalammapatnam"
+      },
+      "movingStatus": 0,
+      "halt": {
+        "startTime": "2017-07-12T12:20:03Z"
+      },
+      "created_on": "2017-07-12T12:20:14Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "594d49da-e515-4d33-b9ea-e17694243b8c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 6.400000095367432
+      },
+      "device_created_on": "2017-07-12T12:16:33Z",
+      "totalDistance": 3240.0105893754944,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0153,
+            14.9174
+          ]
+        },
+        "line1": "Sunkalammapatnam"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:16:41Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "38074783-2d6c-4ceb-a297-f22343240ccd",
+      "speed": {
+        "unit": "KM/H",
+        "value": 30.0
+      },
+      "device_created_on": "2017-07-12T12:14:13Z",
+      "totalDistance": 3239.1306958644223,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0144,
+            14.9301
+          ]
+        },
+        "line1": "Pedda Vanka"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T12:14:33Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": true,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "00043df3-4df0-4072-8080-6f7249e0ee27",
+      "speed": {
+        "unit": "KM/H",
+        "value": 0.0
+      },
+      "device_created_on": "2017-07-12T12:08:23Z",
+      "totalDistance": 3238.6441579586,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0189,
+            14.9348
+          ]
+        },
+        "line1": "Sazzaladinne"
+      },
+      "movingStatus": 0,
+      "halt": {
+        "startTime": "2017-07-12T12:08:23Z"
+      },
+      "created_on": "2017-07-12T12:08:34Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "cc4d2e64-ef52-4b6b-9e1c-2f67bb29a691",
+      "speed": {
+        "unit": "KM/H",
+        "value": 38.20000076293945
+      },
+      "device_created_on": "2017-07-12T10:31:24Z",
+      "totalDistance": 3237.392279775085,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0289,
+            14.9387
+          ]
+        },
+        "line1": "Sazzaladinne"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:31:28Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "573dd54e-51c7-4352-ad8d-11019dd08c1c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 33.20000076293945
+      },
+      "device_created_on": "2017-07-12T10:27:54Z",
+      "totalDistance": 3236.15672487531,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.043,
+            14.9499
+          ]
+        },
+        "line1": "Avulatijepayapalle"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:29:00Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "94123835-7c3a-46af-af25-9563060fb677",
+      "speed": {
+        "unit": "KM/H",
+        "value": 31.399999618530273
+      },
+      "device_created_on": "2017-07-12T10:22:24Z",
+      "totalDistance": 3234.4700393537673,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.058,
+            14.9531
+          ]
+        },
+        "line1": "Obaleswaraswami"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:25:43Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0feca01d-23ea-4e0a-89e8-6d07f545f21e",
+      "speed": {
+        "unit": "KM/H",
+        "value": 9.100000381469727
+      },
+      "device_created_on": "2017-07-12T10:20:50Z",
+      "totalDistance": 3234.0732473057024,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0635,
+            14.951
+          ]
+        },
+        "line1": "Talaricheruvu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:25:36Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "ade4a6c0-2273-4b7a-a216-10f7b1f032da",
+      "speed": {
+        "unit": "KM/H",
+        "value": 22.799999237060547
+      },
+      "device_created_on": "2017-07-12T10:17:51Z",
+      "totalDistance": 3233.347881471211,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0724,
+            14.9497
+          ]
+        },
+        "line1": "Hajivali Darga"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:25:21Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "0b589ac1-7bb9-486b-b962-c34453062b0d",
+      "speed": {
+        "unit": "KM/H",
+        "value": 11.100000381469727
+      },
+      "device_created_on": "2017-07-12T10:12:41Z",
+      "totalDistance": 3232.7278492273085,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0786,
+            14.9522
+          ]
+        },
+        "line1": "Talaricheruvu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:24:58Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "369eb704-b3e5-4ea1-bd24-9dfd4a17db24",
+      "speed": {
+        "unit": "KM/H",
+        "value": 14.300000190734863
+      },
+      "device_created_on": "2017-07-12T09:50:45Z",
+      "totalDistance": 3232.5209848543313,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0785,
+            14.9519005
+          ]
+        },
+        "line1": "Konarangaswami"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:22:47Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "dbc4dcc2-b7a5-4a32-abc3-d9bd130c9e9c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 17.299999237060547
+      },
+      "device_created_on": "2017-07-12T09:48:45Z",
+      "totalDistance": 3232.3847308306113,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0777,
+            14.9517
+          ]
+        },
+        "line1": "Talaricheruvu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:22:39Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "e3210735-d4a0-4b98-a04c-eba09c2c1a73",
+      "speed": {
+        "unit": "KM/H",
+        "value": 13.199999809265137
+      },
+      "device_created_on": "2017-07-12T07:23:09Z",
+      "totalDistance": 3232.1751886480715,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0785,
+            14.9519005
+          ]
+        },
+        "line1": "Konarangaswami"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:22:24Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "5790dfc7-f2aa-4666-9016-f4e998fc2162",
+      "speed": {
+        "unit": "KM/H",
+        "value": 15.5
+      },
+      "device_created_on": "2017-07-12T07:20:29Z",
+      "totalDistance": 3232.031390601024,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0776,
+            14.9516
+          ]
+        },
+        "line1": "Talaricheruvu"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:22:17Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": false,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "73a2e258-42ee-47bd-b95e-18685442980c",
+      "speed": {
+        "unit": "KM/H",
+        "value": 12.800000190734863
+      },
+      "device_created_on": "2017-07-12T07:19:29Z",
+      "totalDistance": 3231.9437812334754,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0786,
+            14.952
+          ]
+        },
+        "line1": "Konarangaswami"
+      },
+      "movingStatus": 1,
+      "created_on": "2017-07-12T10:22:13Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    },
+    {
+      "isHalted": true,
+      "source": "sensor",
+      "type": "automatic",
+      "uuid": "fdfd7098-67f3-4ff9-994b-3d7425eb57ec",
+      "speed": {
+        "unit": "KM/H",
+        "value": 0.0
+      },
+      "device_created_on": "2017-07-12T06:33:51Z",
+      "totalDistance": 3231.8902376476417,
+      "address": {
+        "country": "IN",
+        "city": null,
+        "state": {
+          "id": 1278629,
+          "longName": "Andhra Pradesh",
+          "name": "AP"
+        },
+        "gps": {
+          "coordinates": [
+            78.0789,
+            14.9527
+          ]
+        },
+        "line1": "Talaricheruvu"
+      },
+      "movingStatus": 0,
+      "halt": {
+        "startTime": "2017-07-12T06:33:51Z",
+        "endTime": "2017-07-12T07:18:56Z",
+        "duration": 2705.0
+      },
+      "created_on": "2017-07-12T10:22:09Z",
+      "status": {
+        "id": 100600,
+        "value": "Picked up",
+        "key": "2115"
+      },
+      "correlationId": "24|369|f28d2b9f-6cab-42c6-9725-d9b58951b787"
+    }
+  ],
+  "statistics": {
+    "totalHaltTime": 2935.0,
+    "totalTime": 35468.0,
+    "totalDistance": 103.87706669746977,
+    "statisticsInfo": true,
+    "pingCount": 1357
+  }
+}

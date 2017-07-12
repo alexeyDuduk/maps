@@ -26,22 +26,25 @@
             _goToNext(segmentGenerator, frameDuration) {
                 let options = {
                     easing: 'linear',
-                    duration: frameDuration / 2
+                    duration: frameDuration
                 };
 
                 if (!segmentGenerator.moveToNext()) {
                     return this._view.goTo(this._cameraProvider.getTotalViewCamera(), { duration: 3000 });
                 }
 
-                this._segmentRenderer.addPath(segmentGenerator.getSegment());
-                setTimeout(() => {
-                        let promise = (++this._index) % SKIP_POINTS_BY_CAMERA === 0 ?
-                            this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
-                            promiseUtils.resolve();
+                let promise = (++this._index) % SKIP_POINTS_BY_CAMERA === 0 ?
+                    this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
+                    promiseUtils.resolve();
 
-                        promise.then(() => this._goToNext(segmentGenerator, frameDuration));
+                promise.then(() => {
+                    setTimeout(() => {
+
+                        this._segmentRenderer.addPath(segmentGenerator.getSegment());
+                        this._goToNext(segmentGenerator, frameDuration);
                     },
-                frameDuration);
+                    frameDuration);
+                });
             }
         }
 

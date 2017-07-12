@@ -2,7 +2,7 @@
     "use strict";
 
     require([], () => {
-        const DEFAULT_ZOOM = 16;
+        const DEFAULT_ZOOM = 13;
 
         class CameraProvider {
             constructor(segmentGenerator) {
@@ -32,8 +32,8 @@
                 }
 
                 return {
+                    target: this._pointsCache,
                     center: point.slice(0, 2),
-                    zoom: DEFAULT_ZOOM,
                     tilt: 45,
                     heading: this._getHeading(point)
                 };

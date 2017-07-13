@@ -30,8 +30,8 @@
 
             _goToNext(segmentGenerator, frameDuration) {
                 let options = {
-                    easing: 'linear',
-                    duration: frameDuration
+                    easing: 'in-out-cubic',
+                    //duration: frameDuration
                 };
 
                 if (!segmentGenerator.moveToNext()) {

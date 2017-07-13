@@ -15,11 +15,14 @@
                 POINTS_COUNT_PER_CAMERA_POSITION: 4,
                 SPEED_FACTOR: 1,
                 INITIAL_TRANSITION_DURATION: 4000,
-                FRAME_DURATION: 10,
+                FRAME_DURATION: 100,
                 TOTAL_VIEW_TRANSITION_DURATION: 4000
             },
             route: {
                 MAX_POINTS_COUNT: 2000
+            },
+            colors: {
+                BRAND_PRIMARY: [30, 136, 229]
             }
         };
     }

@@ -23,10 +23,10 @@ require([
 
 
     function init() {
-        //const pointsProvider = new EM.HyderabadDataProvider();
-        //const pointsProvider = new EM.MinskDataProvider();
-        //const pointsProvider = new EM.GpsiesDataProvider('bayreuth-10k');
-        let pointsProvider = new EM.ProdDataProvider('prod-3');
+        let pointsProvider = new EM.HyderabadDataProvider();
+        //let pointsProvider = new EM.MinskDataProvider();
+        //let pointsProvider = new EM.GpsiesDataProvider('bayreuth-10k');
+        //let pointsProvider = new EM.ProdDataProvider('prod-2');
         pointsProvider = new EM.RouteTaskDataProviderWrapper(pointsProvider);
 
         pointsProvider.get().then((points) => {
@@ -51,7 +51,7 @@ require([
                 symbolLayers: [
                     new LineSymbol3DLayer({
                         material: {
-                            color: [226, 119, 40]
+                            color: EM.settings.colors.BRAND_PRIMARY
                         },
                         size: 4
                     })
@@ -64,7 +64,7 @@ require([
                 Length: '3,456 km'
             };
 
-            let segmentRenderer = new EM.GraphicRouteSegmentRenderer(view, lineSymbol, lineAtt);
+            let segmentRenderer = new EM.GraphicRouteSegmentRenderer(map, lineSymbol, lineAtt);
             //let segmentRenderer = new EM.PolyRouteSegmentRenderer(view, lineSymbol, lineAtt);
 
             let routeRenderer = new EM.CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);

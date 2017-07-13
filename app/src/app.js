@@ -26,7 +26,8 @@ require([
         //const pointsProvider = new EM.HyderabadDataProvider();
         //const pointsProvider = new EM.MinskDataProvider();
         //const pointsProvider = new EM.GpsiesDataProvider('bayreuth-10k');
-        const pointsProvider = new EM.ProdDataProvider('prod-3');
+        let pointsProvider = new EM.ProdDataProvider('prod-3');
+        pointsProvider = new EM.RouteTaskDataProviderWrapper(pointsProvider);
 
         pointsProvider.get().then((points) => {
             let segmentGenerator = createRouteSegmentGenerator(points);
@@ -70,8 +71,9 @@ require([
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
 
             view.then(() =>
-                setTimeout(() => routeRenderer.draw(segmentGenerator, 500), 5000)
-            );
+                setTimeout(() => routeRenderer.draw(segmentGenerator, 10), 5000)
+            )
+                .otherwise(() => console.log('view.otherwise'))
         });
     }
 

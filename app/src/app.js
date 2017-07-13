@@ -19,7 +19,7 @@ require([
 
     const EM = window.EM;
 
-    init();
+    setTimeout(init, 300);
 
 
     function init() {
@@ -71,15 +71,14 @@ require([
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
 
             view.then(() =>
-                setTimeout(() => routeRenderer.draw(segmentGenerator, 10), 5000)
+                setTimeout(() => routeRenderer.draw(segmentGenerator), 5000)
             )
-                .otherwise(() => console.log('view.otherwise'))
+                .otherwise(() => console.log('view.otherwise'));
         });
     }
 
     function createRouteSegmentGenerator(points) {
-        const MAX_POINTS_COUNT = 400;
-        let step = Math.floor(points.length / MAX_POINTS_COUNT);
+        let step = Math.floor(points.length / EM.settings.route.MAX_POINTS_COUNT);
 
         return step ?
             new EM.PathSegmentGenerator(points, step) :

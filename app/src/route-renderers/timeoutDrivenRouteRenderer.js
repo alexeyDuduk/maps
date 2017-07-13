@@ -2,12 +2,14 @@
     "use strict";
 
     require([], () => {
+        const settings = window.EM.settings.camera;
+
         class TimeoutDrivenRouteRenderer {
             constructor(segmentRenderer) {
                 this._segmentRenderer = segmentRenderer;
             }
 
-            draw(segmentGenerator, delay) {
+            draw(segmentGenerator) {
                 let intervalId = setInterval(function () {
                     try {
                         if (!segmentGenerator.moveToNext()) {
@@ -20,7 +22,7 @@
                     catch (e) {
                         console.log(e);
                     }
-                }, delay);
+                }, settings.FRAME_DURATION);
             }
         }
 

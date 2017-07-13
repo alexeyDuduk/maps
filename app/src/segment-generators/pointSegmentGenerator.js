@@ -31,6 +31,10 @@
             getPoints() {
                 return this._points;
             }
+
+            getPointsCountInSegment() {
+                return 1;
+            }
         }
 
         window.EM.PointSegmentGenerator = PointSegmentGenerator;

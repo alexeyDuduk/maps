@@ -2,7 +2,7 @@
     "use strict";
 
     require([], () => {
-        const DEFAULT_ZOOM = 13;
+        const settings = window.EM.settings.camera;
 
         class CameraProvider {
             constructor(segmentGenerator) {
@@ -10,7 +10,12 @@
                 this._latSum = 0;
                 this._lngSum = 0;
                 this._count = 0;
-                this._pointsToRemember = 20;
+                this._segmentsToRemember = Math.ceil(
+                    settings.HEADING_TARGET_POINTS_COUNT / segmentGenerator.getPointsCountInSegment()
+                );
+                this._scaleSegmentsCount = Math.ceil(
+                    settings.SCALE_TARGET_POINTS_COUNT / segmentGenerator.getPointsCountInSegment()
+                );
                 this._pointsCache = [];
             }
 
@@ -19,22 +24,22 @@
 
                 return {
                     center: point.slice(0, 2),
-                    zoom: DEFAULT_ZOOM,
-                    tilt: 0,
+                    zoom: settings.DEFAULT_ZOOM,
+                    tilt: settings.INITIAL_TILT,
                     heading: this._getHeading(point)
                 };
             }
 
             getCamera(point) {
                 this._rememberPoint(point);
-                if (this._count > this._pointsToRemember) {
+                if (this._count > this._segmentsToRemember) {
                     this._forgetFirstPoint();
                 }
 
                 return {
-                    target: _.takeRight(this._pointsCache, 10),
-                    center: point.slice(0, 2),
-                    tilt: 55,
+                    target: _.takeRight(this._pointsCache, this._scaleSegmentsCount),
+                    //center: point.slice(0, 2),
+                    tilt: settings.ROUTE_TILT,
                     heading: this._getHeading(point)
                 };
             }
@@ -42,7 +47,7 @@
             getTotalViewCamera() {
                 return {
                     target: this._segmentGenerator.getPoints(),
-                    tilt: 30
+                    tilt: settings.TOTAL_VIEW_TILT
                 };
             }
 

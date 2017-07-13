@@ -30,6 +30,10 @@
             getPoints() {
                 return this._points;
             }
+
+            getPointsCountInSegment() {
+                return this._step;
+            }
         }
 
         window.EM.PathSegmentGenerator = PathSegmentGenerator;

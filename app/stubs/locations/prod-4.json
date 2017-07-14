@@ -1,0 +1,115 @@
+[
+  {
+    "location": {
+      "address": {
+        "city": {
+          "name": "BELLARY"
+        },
+        "state": {
+          "name": "KA",
+          "longName": "Karnataka"
+        },
+        "zip": "583101",
+        "gps": {
+          "coordinates": [
+            76.933216,
+            15.143547
+          ]
+        },
+        "type": {
+          "key": "1153",
+          "value": "Main",
+          "id": 100604
+        },
+        "sourceId": "addresses-0",
+        "line1": "M/s. Balaji Warehousing Company Godown,No.76, Rupangudi Road, Ward No.9,Bellary,Bellary,BELLARY",
+        "id": "3a1815b2-f5c3-459b-920f-b78b9dbd2b9b"
+      },
+      "timezone": "Asia/Kolkata",
+      "name": "PENNA CEMENT IND-BELLARY SPO.,",
+      "id": 56679
+    },
+    "type": {
+      "id": 100056,
+      "value": "Pickup"
+    },
+    "sequence": 1,
+    "state": "COMPLETED",
+    "timezone": "Asia/Calcutta",
+    "ship_location_id": 376729,
+    "name": "PENNA CEMENT IND-BELLARY SPO.,",
+    "eta_val": "13762",
+    "miles_value": "154414",
+    "eta": "3 hours 49 mins",
+    "miles": 96
+  },
+  {
+    "location": {
+      "address": {
+        "city": {
+          "name": "TALARICHERUVU"
+        },
+        "state": {
+          "name": "AP"
+        },
+        "zip": "515415",
+        "gps": {
+          "coordinates": [
+            78.0751774,
+            14.9503095
+          ]
+        },
+        "type": {
+          "id": 100604,
+          "key": "1153",
+          "value": "Main"
+        },
+        "sourceId": "addresses-0",
+        "line1": "PENNA CEMENT INDUSTRIES LTD,TALARICHERUVU-UNIT 1,TADIPATRI",
+        "id": "b48ade4a-9d48-4d93-83cf-0d937aee90e0",
+        "active": true,
+        "deleted": false,
+        "country": null,
+        "line2": null
+      },
+      "timezone": "Asia/Kolkata",
+      "name": "PCIL-TALARICHERUVU",
+      "photo": "",
+      "id": 56626
+    },
+    "address": {
+      "line1": "PENNA CEMENT INDUSTRIES LTD,TALARICHERUVU-UNIT 1,TADIPATRI",
+      "city": {
+        "name": "TALARICHERUVU"
+      },
+      "type": {
+        "id": 100604,
+        "key": "1153",
+        "value": "Main"
+      },
+      "state": {
+        "name": "AP"
+      },
+      "zip": "515415",
+      "gps": {
+        "coordinates": [
+          78.0751774,
+          14.9503095
+        ]
+      }
+    },
+    "type": {
+      "id": 100057,
+      "value": "Delivery"
+    },
+    "sequence": 0,
+    "state": "COMPLETED",
+    "custom_id": "",
+    "ship_location_id": 376728,
+    "name": "PCIL-TALARICHERUVU",
+    "miles": 0,
+    "eta_val": "",
+    "miles_value": "0",
+    "eta": ""
+  }
+]

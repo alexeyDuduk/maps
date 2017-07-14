@@ -1,0 +1,2684 @@
+{
+    "pagination": {
+        "start": 68,
+        "pageSize": 500,
+        "totalRecordsInPage": 68,
+        "totalRecords": 0,
+        "moreAvailable": false
+    },
+    "data": [
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "ec4b1d7b-0c54-4cf4-a390-55d5d90e6391",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.110000610351562
+            },
+            "device_created_on": "2017-07-14T10:31:08Z",
+            "totalDistance": 4607.573207724287,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9119,
+                        15.1886
+                    ]
+                },
+                "line1": "Sidaragadda"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T10:31:08Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "93fd2e6f-2afb-4bba-bd07-4135e930985f",
+            "speed": {
+                "unit": "KM/H",
+                "value": 7.920000076293945
+            },
+            "device_created_on": "2017-07-14T10:20:07Z",
+            "totalDistance": 4604.638690510231,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9206,
+                        15.1493
+                    ]
+                },
+                "line1": "Boyigudam"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T10:20:08Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "00f5d2d3-7264-44bf-87fe-51b1ba94591c",
+            "speed": {
+                "unit": "KM/H",
+                "value": 9.239999771118164
+            },
+            "device_created_on": "2017-07-14T10:14:37Z",
+            "totalDistance": 4603.518242403917,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9201,
+                        15.1364
+                    ]
+                },
+                "line1": "Bellary"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T10:14:37Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "d95c6180-b5a7-4c94-8ab1-953d91626d53",
+            "speed": {
+                "unit": "KM/H",
+                "value": 19.850000381469727
+            },
+            "device_created_on": "2017-07-14T10:13:37Z",
+            "totalDistance": 4603.286312420293,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9189,
+                        15.1333
+                    ]
+                },
+                "line1": "Brucepettah"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T10:13:37Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e6afbe97-166d-4249-81b5-4943fc8f0be2",
+            "speed": {
+                "unit": "KM/H",
+                "value": 10.739999771118164
+            },
+            "device_created_on": "2017-07-14T10:11:07Z",
+            "totalDistance": 4602.6575043074145,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9143,
+                        15.1255
+                    ]
+                },
+                "line1": "Gaulihatti"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T10:11:07Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "8bca729d-c467-48b3-a4f7-bc8cd7b93c42",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T09:54:07Z",
+            "totalDistance": 4602.204442622207,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9105,
+                        15.1201
+                    ]
+                },
+                "line1": "Guggarahatti"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T09:54:07Z",
+                "endTime": "2017-07-14T10:09:07Z",
+                "duration": 900.0
+            },
+            "created_on": "2017-07-14T09:54:07Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "d97784fa-d4d5-4627-9a62-6d3c6b32bd9d",
+            "speed": {
+                "unit": "KM/H",
+                "value": 15.460000038146973
+            },
+            "device_created_on": "2017-07-14T09:50:37Z",
+            "totalDistance": 4601.342269554717,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9044,
+                        15.1109
+                    ]
+                },
+                "line1": "Guggarahatti"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T09:50:37Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "711baa8b-4e3d-4df8-90a9-dce57aa274a7",
+            "speed": {
+                "unit": "KM/H",
+                "value": 14.529999732971191
+            },
+            "device_created_on": "2017-07-14T09:47:07Z",
+            "totalDistance": 4600.640302587425,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9147,
+                        15.1126
+                    ]
+                },
+                "line1": "Mundrigi"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T09:47:07Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "d1c1e8f8-3f5e-400a-b823-a0fda7c98a07",
+            "speed": {
+                "unit": "KM/H",
+                "value": 17.90999984741211
+            },
+            "device_created_on": "2017-07-14T09:44:37Z",
+            "totalDistance": 4599.9471555320215,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9247,
+                        15.1153
+                    ]
+                },
+                "line1": "Kakantota"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T09:44:37Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "0cd29bcc-7743-4cbd-8e72-a00e865764ca",
+            "speed": {
+                "unit": "KM/H",
+                "value": 19.84000015258789
+            },
+            "device_created_on": "2017-07-14T09:39:37Z",
+            "totalDistance": 4598.758313279233,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9416,
+                        15.1204
+                    ]
+                },
+                "line1": "Andrahalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T09:39:37Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e00f947e-ca45-4c6d-bbd5-208cf7b780f4",
+            "speed": {
+                "unit": "KM/H",
+                "value": 5.670000076293945
+            },
+            "device_created_on": "2017-07-14T09:31:06Z",
+            "totalDistance": 4596.89730129444,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9396,
+                        15.1346
+                    ]
+                },
+                "line1": "Gonahalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T09:31:07Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e4b8701e-b13c-41d8-9198-2adcb029c1a0",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T08:25:01Z",
+            "totalDistance": 4596.737009857889,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9389,
+                        15.1342
+                    ]
+                },
+                "line1": "Brucepettah"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T08:25:01Z",
+                "endTime": "2017-07-14T09:29:23Z",
+                "duration": 3862.0
+            },
+            "created_on": "2017-07-14T08:25:02Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e3eabfa9-cb05-4083-8878-9c0c8f1c8db1",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T07:44:01Z",
+            "totalDistance": 4596.497626209973,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9399,
+                        15.1338
+                    ]
+                },
+                "line1": "Gonahalu"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T07:44:01Z",
+                "endTime": "2017-07-14T08:08:53Z",
+                "duration": 1492.0
+            },
+            "created_on": "2017-07-14T07:44:01Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e0a40972-7cda-4769-abb9-d1517a92fb96",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T07:23:30Z",
+            "totalDistance": 4596.460385574951,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9398,
+                        15.1343
+                    ]
+                },
+                "line1": "Gonahalu"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T07:23:30Z",
+                "endTime": "2017-07-14T07:43:26Z",
+                "duration": 1196.0
+            },
+            "created_on": "2017-07-14T07:23:31Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "a2022127-cb90-4c99-a8c3-4aedde4afb49",
+            "speed": {
+                "unit": "KM/H",
+                "value": 5.269999980926514
+            },
+            "device_created_on": "2017-07-14T07:23:00Z",
+            "totalDistance": 4596.420367431525,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9392,
+                        15.1343
+                    ]
+                },
+                "line1": "Gonahalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T07:23:01Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "59b5587d-3eee-4c2c-be01-6495e43872f0",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T07:09:30Z",
+            "totalDistance": 4596.407028050383,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.939,
+                        15.1343
+                    ]
+                },
+                "line1": "Brucepettah"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T07:09:30Z",
+                "endTime": "2017-07-14T07:23:00Z",
+                "duration": 810.0
+            },
+            "created_on": "2017-07-14T07:09:30Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "f1f6c8ec-d11b-461c-b2b5-e111bcf261d9",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.65999984741211
+            },
+            "device_created_on": "2017-07-14T06:59:00Z",
+            "totalDistance": 4594.528991153346,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9551,
+                        15.137
+                    ]
+                },
+                "line1": "Gonahalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:59:02Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "9b1d2693-6453-4a41-949c-2af903adfe81",
+            "speed": {
+                "unit": "KM/H",
+                "value": 19.079999923706055
+            },
+            "device_created_on": "2017-07-14T06:57:00Z",
+            "totalDistance": 4593.924760504061,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.9617,
+                        15.1392
+                    ]
+                },
+                "line1": "Satyanarayanapettah"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:57:00Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "122fe59d-26d2-448a-bafe-8999f3e99a5e",
+            "speed": {
+                "unit": "KM/H",
+                "value": 16.209999084472656
+            },
+            "device_created_on": "2017-07-14T06:52:00Z",
+            "totalDistance": 4592.483404197101,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.983,
+                        15.1405
+                    ]
+                },
+                "line1": "Bisalahalli"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:52:00Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "2cd9b6f4-6da6-4aa5-9ce0-fb5dabfc518f",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.489999771118164
+            },
+            "device_created_on": "2017-07-14T06:49:29Z",
+            "totalDistance": 4591.74302413508,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        76.994,
+                        15.1419
+                    ]
+                },
+                "line1": "Bevinahalli"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:49:30Z",
+            "status": {
+                "id": 100166,
+                "value": "At delivery",
+                "key": "2106"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "20e1f565-3b9a-4c48-993e-bd2333cf1889",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.1299991607666
+            },
+            "device_created_on": "2017-07-14T06:46:59Z",
+            "totalDistance": 4591.09888517685,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.0036,
+                        15.1429
+                    ]
+                },
+                "line1": "Kakkabevinahalli"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:47:00Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "92a578d6-1e14-40e1-b43c-65ebe69fc7c2",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.360000610351562
+            },
+            "device_created_on": "2017-07-14T06:42:29Z",
+            "totalDistance": 4589.76771950405,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.0234,
+                        15.1425
+                    ]
+                },
+                "line1": "Amarapuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:42:30Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "ca6a3511-7866-4dbb-9467-bea8d697317a",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.260000228881836
+            },
+            "device_created_on": "2017-07-14T06:35:29Z",
+            "totalDistance": 4588.5630903120955,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.0414,
+                        15.1428
+                    ]
+                },
+                "line1": "Tagginabudehalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:35:30Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "3c6da3eb-f7d7-4386-bdf2-8701d1585ad7",
+            "speed": {
+                "unit": "KM/H",
+                "value": 23.90999984741211
+            },
+            "device_created_on": "2017-07-14T06:29:35Z",
+            "totalDistance": 4586.733613333701,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.0688,
+                        15.1425
+                    ]
+                },
+                "line1": "Paramadevanahalli"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:29:37Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "3032c33b-373a-4ee4-a1f2-e98e12d7fc8d",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.850000381469727
+            },
+            "device_created_on": "2017-07-14T06:26:59Z",
+            "totalDistance": 4585.679363785692,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.0845,
+                        15.1421
+                    ]
+                },
+                "line1": "Minahalli"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:27:02Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "7276cdec-7701-44bb-9d14-7009cfaddbef",
+            "speed": {
+                "unit": "KM/H",
+                "value": 23.049999237060547
+            },
+            "device_created_on": "2017-07-14T06:11:59Z",
+            "totalDistance": 4580.574921061414,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Bellary",
+                    "id": 1276510
+                },
+                "state": {
+                    "id": 1267701,
+                    "longName": "Karnataka",
+                    "name": "KA"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.1604,
+                        15.1346
+                    ]
+                },
+                "line1": "Chellakuriki"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:12:00Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "8b11b479-6cae-4867-a3a1-cbff84fdb5d5",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.510000228881836
+            },
+            "device_created_on": "2017-07-14T06:11:29Z",
+            "totalDistance": 4580.354388113866,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Kurnool",
+                    "id": 1265492
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.1637,
+                        15.1344
+                    ]
+                },
+                "line1": "Tsakibanda"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:11:29Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "c90671d9-2614-4817-afee-a702a73a5bad",
+            "speed": {
+                "unit": "KM/H",
+                "value": 12.8100004196167
+            },
+            "device_created_on": "2017-07-14T06:02:29Z",
+            "totalDistance": 4577.677349411979,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.2029,
+                        15.13
+                    ]
+                },
+                "line1": "Donekallu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T06:02:29Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "dc6691c2-eee1-40e6-9982-4cb61b18a453",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.799999237060547
+            },
+            "device_created_on": "2017-07-14T05:57:58Z",
+            "totalDistance": 4575.972164037189,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.2265,
+                        15.1206
+                    ]
+                },
+                "line1": "Kadadarabenchi"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T05:57:59Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "98cc1157-6e70-442e-ad63-1fcd97f57abf",
+            "speed": {
+                "unit": "KM/H",
+                "value": 11.949999809265137
+            },
+            "device_created_on": "2017-07-14T05:37:28Z",
+            "totalDistance": 4573.184463884712,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.2665,
+                        15.117
+                    ]
+                },
+                "line1": "Gadekallu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T05:37:29Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "dbe093a3-56d0-4b25-860d-c806d9914ccd",
+            "speed": {
+                "unit": "KM/H",
+                "value": 23.020000457763672
+            },
+            "device_created_on": "2017-07-14T05:26:28Z",
+            "totalDistance": 4569.599152959705,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.3163,
+                        15.1355
+                    ]
+                },
+                "line1": "Hanchinahalu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T05:26:29Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "7e4f9608-ae14-4465-8c51-d70dfb33e81b",
+            "speed": {
+                "unit": "KM/H",
+                "value": 13.420000076293945
+            },
+            "device_created_on": "2017-07-14T05:14:28Z",
+            "totalDistance": 4566.114261078525,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.3645,
+                        15.1478
+                    ]
+                },
+                "line1": "Kottala"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T05:14:28Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "4d2f89d7-60cc-49a6-8c9c-72e3eadbebd9",
+            "speed": {
+                "unit": "KM/H",
+                "value": 16.3799991607666
+            },
+            "device_created_on": "2017-07-14T05:13:58Z",
+            "totalDistance": 4565.968365429337,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.3663,
+                        15.149
+                    ]
+                },
+                "line1": "Guntakal Junction"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T05:13:58Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "0901aca9-fb0c-44fb-aca7-6afe0eacda13",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T03:46:26Z",
+            "totalDistance": 4565.636331354693,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.3707,
+                        15.1512
+                    ]
+                },
+                "line1": "Timmancherla"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T03:46:26Z",
+                "endTime": "2017-07-14T05:12:47Z",
+                "duration": 5181.0
+            },
+            "created_on": "2017-07-14T03:46:27Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "5d9aff81-df1e-4e56-ac74-dc438fffbb42",
+            "speed": {
+                "unit": "KM/H",
+                "value": 12.9399995803833
+            },
+            "device_created_on": "2017-07-14T03:42:56Z",
+            "totalDistance": 4565.01974928001,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.3789,
+                        15.1553
+                    ]
+                },
+                "line1": "Timmancherla"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T03:42:56Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": true,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "0cf889c5-fca5-4374-82af-6468410c0be0",
+            "speed": {
+                "unit": "KM/H",
+                "value": 0.0
+            },
+            "device_created_on": "2017-07-14T02:51:25Z",
+            "totalDistance": 4563.140655833289,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4034,
+                        15.1611
+                    ]
+                },
+                "line1": "Timmancherla Railroad Station"
+            },
+            "movingStatus": 0,
+            "halt": {
+                "startTime": "2017-07-14T02:51:25Z",
+                "endTime": "2017-07-14T03:32:44Z",
+                "duration": 2479.0
+            },
+            "created_on": "2017-07-14T02:51:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "7388f5de-2243-42fe-98a8-8ca65aeaf6c8",
+            "speed": {
+                "unit": "KM/H",
+                "value": 22.43000030517578
+            },
+            "device_created_on": "2017-07-14T02:48:55Z",
+            "totalDistance": 4562.393736183188,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4144,
+                        15.1597
+                    ]
+                },
+                "line1": "Timmancherla Railroad Station"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:48:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "f1e8318b-f4fd-4292-8b54-797b9be9d61d",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.520000457763672
+            },
+            "device_created_on": "2017-07-14T02:39:25Z",
+            "totalDistance": 4560.108660890784,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4475,
+                        15.1569
+                    ]
+                },
+                "line1": "Timmapuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:39:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "7b6ab6e0-ea36-4595-b5e1-969488d24095",
+            "speed": {
+                "unit": "KM/H",
+                "value": 22.670000076293945
+            },
+            "device_created_on": "2017-07-14T02:38:25Z",
+            "totalDistance": 4559.705319520192,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4534,
+                        15.1561
+                    ]
+                },
+                "line1": "Timmapuram Tanda"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:38:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "400c0ecf-1774-4022-abeb-92ada96bfa59",
+            "speed": {
+                "unit": "KM/H",
+                "value": 24.149999618530273
+            },
+            "device_created_on": "2017-07-14T02:34:54Z",
+            "totalDistance": 4558.541369295552,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4707,
+                        15.1583
+                    ]
+                },
+                "line1": "Nakkanadoddi"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:34:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "0194ab29-8d15-4ba7-81cb-b997b94c6488",
+            "speed": {
+                "unit": "KM/H",
+                "value": 17.739999771118164
+            },
+            "device_created_on": "2017-07-14T02:32:54Z",
+            "totalDistance": 4557.706856720041,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4831,
+                        15.1599
+                    ]
+                },
+                "line1": "Narasapuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:33:07Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "4d5ad4b4-39d5-43fa-8f3a-2def59b364c9",
+            "speed": {
+                "unit": "KM/H",
+                "value": 15.84000015258789
+            },
+            "device_created_on": "2017-07-14T02:30:54Z",
+            "totalDistance": 4556.841670565471,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.4956,
+                        15.1566
+                    ]
+                },
+                "line1": "Gonderla"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:30:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "81a7a867-230b-4b32-916e-7bc02f2e9859",
+            "speed": {
+                "unit": "KM/H",
+                "value": 23.420000076293945
+            },
+            "device_created_on": "2017-07-14T02:14:54Z",
+            "totalDistance": 4551.3299658068245,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.571,
+                        15.1293
+                    ]
+                },
+                "line1": "Patakottacheruvu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T02:14:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "043a7543-4e6d-416c-adac-375d8281631e",
+            "speed": {
+                "unit": "KM/H",
+                "value": 25.06999969482422
+            },
+            "device_created_on": "2017-07-14T01:41:23Z",
+            "totalDistance": 4543.180113614715,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.681,
+                        15.1162
+                    ]
+                },
+                "line1": "Gooty"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:41:24Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "a7a213a3-ecbd-45d1-95e4-46cf7c21df57",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.200000762939453
+            },
+            "device_created_on": "2017-07-14T01:23:53Z",
+            "totalDistance": 4538.682426168724,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.7418,
+                        15.0975
+                    ]
+                },
+                "line1": "Jakkulacheruvu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:23:54Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "c64c06d4-b8d0-416e-be4a-d038f4668d6b",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.270000457763672
+            },
+            "device_created_on": "2017-07-14T01:14:23Z",
+            "totalDistance": 4536.348694889066,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.7724,
+                        15.083
+                    ]
+                },
+                "line1": "Timmapuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:14:24Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "b4f39ca5-8e6a-4701-a35f-d71588faff7d",
+            "speed": {
+                "unit": "KM/H",
+                "value": 23.889999389648438
+            },
+            "device_created_on": "2017-07-14T01:13:53Z",
+            "totalDistance": 4536.120381592087,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.7752,
+                        15.0811
+                    ]
+                },
+                "line1": "Kadadaraguttapalle"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:13:54Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "2ea9bf30-2b62-4ec0-9e35-e1c726c972b5",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.239999771118164
+            },
+            "device_created_on": "2017-07-14T01:09:23Z",
+            "totalDistance": 4534.4932204325205,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.7955,
+                        15.0681
+                    ]
+                },
+                "line1": "Krishtipadu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:09:39Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "4208a801-36d4-4426-aec3-e7c3a688fe44",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.389999389648438
+            },
+            "device_created_on": "2017-07-14T01:08:53Z",
+            "totalDistance": 4534.292853882846,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.7981,
+                        15.0666
+                    ]
+                },
+                "line1": "Krishtipadu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:09:39Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "077b0171-c0a0-473c-bca9-af1f65ab8d0c",
+            "speed": {
+                "unit": "KM/H",
+                "value": 22.09000015258789
+            },
+            "device_created_on": "2017-07-14T01:08:23Z",
+            "totalDistance": 4534.093674677399,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.8009,
+                        15.0656
+                    ]
+                },
+                "line1": "Chandana"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:09:38Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "9c98e4c4-1ce8-44d7-8a8a-eb5b227b284b",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.610000610351562
+            },
+            "device_created_on": "2017-07-14T01:01:53Z",
+            "totalDistance": 4531.853146109197,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.8276,
+                        15.0471
+                    ]
+                },
+                "line1": "Rayalacheruvu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:01:54Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "d04ec64f-c1c2-4479-9cf2-6db03a6dde1c",
+            "speed": {
+                "unit": "KM/H",
+                "value": 25.049999237060547
+            },
+            "device_created_on": "2017-07-14T01:00:53Z",
+            "totalDistance": 4531.4063556242,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.8295,
+                        15.0409
+                    ]
+                },
+                "line1": "Kummarajipeta"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T01:00:54Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "b637fc36-8af8-49bb-b9b7-7cd1115694bc",
+            "speed": {
+                "unit": "KM/H",
+                "value": 16.850000381469727
+            },
+            "device_created_on": "2017-07-14T00:59:53Z",
+            "totalDistance": 4531.096368317781,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.8339,
+                        15.0403
+                    ]
+                },
+                "line1": "Peddapeta"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:59:53Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "28f5b285-b24b-49ce-abe9-812af0419688",
+            "speed": {
+                "unit": "KM/H",
+                "value": 18.420000076293945
+            },
+            "device_created_on": "2017-07-14T00:48:23Z",
+            "totalDistance": 4526.443354544277,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.8934,
+                        15.0052
+                    ]
+                },
+                "line1": "Timmapuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:48:23Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "926882ee-c725-4988-b801-cb615b92a89c",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.1200008392334
+            },
+            "device_created_on": "2017-07-14T00:36:54Z",
+            "totalDistance": 4525.70773277402,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9018,
+                        14.9987
+                    ]
+                },
+                "line1": "Chimalavagupalle"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:36:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "69afdb32-c04f-4cdb-9823-02b74f5fec59",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.959999084472656
+            },
+            "device_created_on": "2017-07-14T00:33:24Z",
+            "totalDistance": 4524.45047949043,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9159,
+                        14.9867
+                    ]
+                },
+                "line1": "Juturu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:33:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "bdfa7194-4071-46f0-a956-51fb40edba2c",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.040000915527344
+            },
+            "device_created_on": "2017-07-14T00:32:24Z",
+            "totalDistance": 4524.035347025583,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9207,
+                        14.9829
+                    ]
+                },
+                "line1": "Bandarlapalle"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:32:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "1018cb6d-7d47-481c-8319-1eb11f65df06",
+            "speed": {
+                "unit": "KM/H",
+                "value": 22.540000915527344
+            },
+            "device_created_on": "2017-07-14T00:29:24Z",
+            "totalDistance": 4522.83470206797,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.933,
+                        14.9703
+                    ]
+                },
+                "line1": "Sitarampuram"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:29:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "2d079ca3-9426-445a-b9ec-7e28f967a45f",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.200000762939453
+            },
+            "device_created_on": "2017-07-14T00:24:54Z",
+            "totalDistance": 4520.888441241472,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9579,
+                        14.957
+                    ]
+                },
+                "line1": "Igaduru"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:24:55Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "e2a02602-8b5c-455a-9694-f2ac4bfeac5d",
+            "speed": {
+                "unit": "KM/H",
+                "value": 20.709999084472656
+            },
+            "device_created_on": "2017-07-14T00:21:24Z",
+            "totalDistance": 4519.48023312143,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9775,
+                        14.9496
+                    ]
+                },
+                "line1": "Puliproddaturu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:21:25Z",
+            "status": {
+                "id": 100165,
+                "value": "En route",
+                "key": "2105"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "6af1bb0c-41a5-40d7-a535-246b086dc900",
+            "speed": {
+                "unit": "KM/H",
+                "value": 13.350000381469727
+            },
+            "device_created_on": "2017-07-14T00:14:53Z",
+            "totalDistance": 4517.356118420812,
+            "address": {
+                "country": "IN",
+                "city": {
+                    "name": "Anantapur",
+                    "id": 1278673
+                },
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        77.9981,
+                        14.9304
+                    ]
+                },
+                "line1": "Chukkaluru"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:14:55Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "3dde235f-1f0b-4ed6-a1c8-18b7ba51a41b",
+            "speed": {
+                "unit": "KM/H",
+                "value": 16.239999771118164
+            },
+            "device_created_on": "2017-07-14T00:13:23Z",
+            "totalDistance": 4516.798952131074,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0063,
+                        14.9289
+                    ]
+                },
+                "line1": "Sazzaladinne"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:13:24Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "69e7b0d0-f90b-4484-82e2-b61183adf014",
+            "speed": {
+                "unit": "KM/H",
+                "value": 17.040000915527344
+            },
+            "device_created_on": "2017-07-14T00:10:53Z",
+            "totalDistance": 4516.113830297005,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0144,
+                        14.9291
+                    ]
+                },
+                "line1": "Pedda Vanka"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-14T00:10:54Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "22eab2ef-8a9c-4a36-aa49-fd94f640dd3f",
+            "speed": {
+                "unit": "KM/H",
+                "value": 19.200000762939453
+            },
+            "device_created_on": "2017-07-13T23:57:23Z",
+            "totalDistance": 4514.529744157477,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0289,
+                        14.9387
+                    ]
+                },
+                "line1": "Sazzaladinne"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-13T23:57:24Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "c557a8d4-fa83-4d9c-b391-711e9c8c27e6",
+            "speed": {
+                "unit": "KM/H",
+                "value": 21.309999465942383
+            },
+            "device_created_on": "2017-07-13T23:53:23Z",
+            "totalDistance": 4513.4145877941155,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0418,
+                        14.9488
+                    ]
+                },
+                "line1": "Avulatijepayapalle"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-13T23:53:54Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "ab86a419-78be-4585-b50f-b0a9386d4e5e",
+            "speed": {
+                "unit": "KM/H",
+                "value": 17.93000030517578
+            },
+            "device_created_on": "2017-07-13T23:45:53Z",
+            "totalDistance": 4511.6559773678655,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0569,
+                        14.9535
+                    ]
+                },
+                "line1": "Obaleswaraswami"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-13T23:45:54Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "b570da1d-06ad-4853-85a7-dee9c6a47718",
+            "speed": {
+                "unit": "KM/H",
+                "value": 16.610000610351562
+            },
+            "device_created_on": "2017-07-13T23:44:23Z",
+            "totalDistance": 4511.244694745348,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0627,
+                        14.9515
+                    ]
+                },
+                "line1": "Talaricheruvu"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-13T23:45:16Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        },
+        {
+            "isHalted": false,
+            "source": "sensor",
+            "type": "automatic",
+            "uuid": "86321da2-eef2-48aa-8064-325747a8227f",
+            "speed": {
+                "unit": "KM/H",
+                "value": 15.710000038146973
+            },
+            "device_created_on": "2017-07-13T23:41:31Z",
+            "totalDistance": 4510.500815113088,
+            "address": {
+                "country": "IN",
+                "city": null,
+                "state": {
+                    "id": 1278629,
+                    "longName": "Andhra Pradesh",
+                    "name": "AP"
+                },
+                "gps": {
+                    "coordinates": [
+                        78.0722,
+                        14.9493
+                    ]
+                },
+                "line1": "Hajivali Darga"
+            },
+            "movingStatus": 1,
+            "created_on": "2017-07-13T23:41:34Z",
+            "status": {
+                "id": 100600,
+                "value": "Picked up",
+                "key": "2115"
+            },
+            "correlationId": "24|369|80dcb268-80a9-401d-80f0-22a300d2105c"
+        }
+    ],
+    "statistics": {
+        "totalHaltTime": 20882.0,
+        "totalTime": 40874.0,
+        "totalDistance": 99.26502255451926,
+        "statisticsInfo": true,
+        "pingCount": 730
+    }
+}

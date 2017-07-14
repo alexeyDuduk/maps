@@ -2,7 +2,7 @@
     "use strict";
 
     function createSettings() {
-        const speedFactor = 1;
+        const ASSETS_PATH = '/assets/';
 
         return {
             camera: {
@@ -22,9 +22,27 @@
                 MAX_POINTS_COUNT: 2000
             },
             colors: {
-                BRAND_PRIMARY: [30, 136, 229]
+                BRAND_PRIMARY: [ 30, 136, 229 ],
+                LOCATIONS: {
+                    none: [ 30, 136, 229 ],
+                    pickup: [ 61, 224, 61 ],
+                    delivery: [ 187, 0, 0 ]
+                }
+            },
+            routeBuilder: {
+                URL: 'https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World',
+                MAX_POINTS_COUNT: 150,  // api limitation
+                POINTS_PERCENT_TO_PROCESS: 50,
+                MIN_POINTS_COUNT: 2
+            },
+            assets: {
+                LOCATION_PIN: _assetsPrefixed('svg/Filled Location Pin.svg')
             }
         };
+
+        function _assetsPrefixed(path) {
+            return ASSETS_PATH + path;
+        }
     }
 
     window.EM.settings = createSettings();

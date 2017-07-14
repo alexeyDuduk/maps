@@ -1,4 +1,5 @@
 require([
+    'esri/core/promiseUtils',
     'esri/Map',
     'esri/views/MapView',
     'esri/views/SceneView',
@@ -7,14 +8,14 @@ require([
     'esri/symbols/LineSymbol3D',
     'esri/symbols/LineSymbol3DLayer',
     'dojo/domReady!'
-], function (Map,
+], function (promiseUtils,
+             Map,
              MapView,
              SceneView,
              Polyline,
              SimpleLineSymbol,
              LineSymbol3D,
-             LineSymbol3DLayer
-) {
+             LineSymbol3DLayer) {
     'use strict';
 
     const EM = window.EM;
@@ -22,14 +23,20 @@ require([
     setTimeout(init, 300);
 
 
-    function init() {
-        let pointsProvider = new EM.HyderabadDataProvider();
-        //let pointsProvider = new EM.MinskDataProvider();
-        //let pointsProvider = new EM.GpsiesDataProvider('bayreuth-10k');
-        //let pointsProvider = new EM.ProdDataProvider('prod-2');
-        pointsProvider = new EM.RouteTaskDataProviderWrapper(pointsProvider);
+    function init () {
+        //let dataProvider = new EM.HyderabadDataProvider();
+        //let dataProvider = new EM.MinskDataProvider();
+        //let dataProvider = new EM.GpsiesDataProvider('bayreuth-10k');
+        let dataProvider = new EM.ProdDataProvider('prod-4');
+        dataProvider = new EM.RouteTaskDataProviderWrapper(dataProvider);
 
-        pointsProvider.get().then((points) => {
+        promiseUtils.eachAlways([
+            dataProvider.getPoints(),
+            dataProvider.getLocations()
+        ]).then(([
+                     {value: points = []},
+                     {value: locations = []}
+                 ]) => {
             let segmentGenerator = createRouteSegmentGenerator(points);
             let cameraProvider = new EM.CameraProvider(segmentGenerator);
 
@@ -70,18 +77,21 @@ require([
             let routeRenderer = new EM.CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
 
-            view.then(() =>
-                setTimeout(() => routeRenderer.draw(segmentGenerator), 5000)
-            )
+            let featureRenderer = new EM.FeatureRenderer(map);
+
+            view.then(() => {
+                featureRenderer.draw(locations);
+                setTimeout(() => {
+                    routeRenderer.draw(segmentGenerator);
+                }, 1000);
+            })
                 .otherwise(() => console.log('view.otherwise'));
         });
     }
 
-    function createRouteSegmentGenerator(points) {
+    function createRouteSegmentGenerator (points) {
         let step = Math.floor(points.length / EM.settings.route.MAX_POINTS_COUNT);
 
-        return step ?
-            new EM.PathSegmentGenerator(points, step) :
-            new EM.PointSegmentGenerator(points);
+        return step ? new EM.PathSegmentGenerator(points, step) : new EM.PointSegmentGenerator(points);
     }
 });

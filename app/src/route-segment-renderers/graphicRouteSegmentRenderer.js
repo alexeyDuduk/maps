@@ -11,7 +11,16 @@
         'esri/layers/GraphicsLayer',
         'esri/layers/FeatureLayer',
         'esri/renderers/SimpleRenderer'
-    ], (Graphic, Point, Polyline, PointSymbol3D, IconSymbol3DLayer, SimpleMarkerSymbol, GraphicsLayer, FeatureLayer, SimpleRenderer) => {
+    ], (Graphic,
+        Point,
+        Polyline,
+        PointSymbol3D,
+        IconSymbol3DLayer,
+        SimpleMarkerSymbol,
+        GraphicsLayer,
+        FeatureLayer,
+        SimpleRenderer
+    ) => {
         const colors = window.EM.settings.colors;
 
         class GraphicRouteSegmentRenderer {
@@ -20,7 +29,8 @@
                 this._lineAtt = lineAtt;
                 this._lastPath = null;
                 this._routeLayer = new GraphicsLayer();
-                this._currentPositionSymbol = new SimpleMarkerSymbol({
+
+                let currentPositionSymbol = new SimpleMarkerSymbol({
                     color: colors.BRAND_PRIMARY,
                     outline: {
                         color: 'white',
@@ -30,7 +40,7 @@
                 });
                 this._pointsLayer = new FeatureLayer({
                     renderer: new SimpleRenderer({
-                        symbol: this._currentPositionSymbol
+                        symbol: currentPositionSymbol
                     }),
                     elevationInfo: {
                         mode: 'on-the-ground'

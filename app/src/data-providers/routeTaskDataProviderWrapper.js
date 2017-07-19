@@ -23,6 +23,10 @@
                     .then((response) => _.flatten(response.routeResults[0].route.geometry.paths));
             }
 
+            getLocations() {
+                return this._dataProvider.getLocations();
+            }
+
             static _filterPoints(points) {
                 let pointsCountToProcess = Math.floor(points.length * settings.POINTS_PERCENT_TO_PROCESS / 100);
                 pointsCountToProcess = Math.max(

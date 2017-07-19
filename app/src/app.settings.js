@@ -24,9 +24,9 @@
             colors: {
                 BRAND_PRIMARY: [ 30, 136, 229 ],
                 LOCATIONS: {
-                    none: [ 30, 136, 229 ],
-                    pickup: [ 61, 224, 61 ],
-                    delivery: [ 187, 0, 0 ]
+                    NONE: [ 30, 136, 229 ],
+                    PICKUP: [ 61, 224, 61 ],
+                    DELIVERY: [ 187, 0, 0 ]
                 }
             },
             routeBuilder: {
@@ -36,7 +36,10 @@
                 MIN_POINTS_COUNT: 2
             },
             assets: {
-                LOCATION_PIN: _assetsPrefixed('svg/Filled Location Pin.svg')
+                LOCATION_PIN: {
+                    PICKUP: _assetsPrefixed('svg/location-pin-pickup.svg'),
+                    DELIVERY: _assetsPrefixed('svg/location-pin-delivery.svg')
+                }
             }
         };
 

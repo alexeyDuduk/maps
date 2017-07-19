@@ -20,93 +20,102 @@
         const colors = window.EM.settings.colors;
         const assets = window.EM.settings.assets;
 
+        const ICON_VERTICAL_OFFSET = {
+            screenLength: 150,
+            maxWorldLength: 5000,
+            minWorldLength: 50
+        };
+
+        let id = 0;
+
         class FeatureRenderer {
-            constructor(map) {
+            constructor (map) {
+                let iconTypes   = ['pickup', 'delivery'];
+                this._layer     = this._createLayer(map, iconTypes);
+            }
+
+            draw (features) {
+                let data = _.map(features, (feature) => ({
+                        geometry: new Point({
+                            latitude: feature.geometry[1],
+                            longitude: feature.geometry[0]
+                        }),
+                        attributes: _.clone(feature)
+                    })
+                );
+
+                this._layer.source.addMany(data);
+            }
+
+            _createLayer (map, symbolTypes) {
+                let symbols = _.map(symbolTypes, (type) => ({
+                    value: type,
+                    symbol: this._createIconSymbol(type)
+                }));
                 let renderer = new UniqueValueRenderer({
                     field: 'type',
-                    uniqueValueInfos: _.map(['pickup', 'delivery'], (type) => ({
-                        value: type,
-                        symbol: this._createSymbol(type)
-                    }))
+                    uniqueValueInfos: symbols
                 });
-                this._layer = new FeatureLayer({
+                let layer = this._createFeatureLayer(renderer);
+                map.layers.add(layer);
+
+                return layer;
+            }
+
+            _createFeatureLayer (renderer) {
+                return new FeatureLayer({
                     renderer: renderer,
-                    id: 11111,
+                    id: this._generateId(),
                     source: [],
-                    fields: [{
-                        name: 'id',
-                        alias: 'Id',
-                        type: 'oid'
-                    },
-                    {
-                        name: 'type',
-                        alias: 'Type',
-                        type: 'string'
-                    }],
+                    fields: [
+                        {
+                            name: 'id',
+                            alias: 'Id',
+                            type: 'oid'
+                        },
+                        {
+                            name: 'type',
+                            alias: 'Type',
+                            type: 'string'
+                        }
+                    ],
                     elevationInfo: {
                         mode: 'relative-to-scene'
                     },
                     objectIdField: "id",
                     geometryType: "point",
-                    spatialReference: { wkid: 4326 },
+                    spatialReference: {
+                        wkid: 4326
+                    },
                     title: 'Locations layer',
                     featureReduction: {
                         type: 'selection'
                     }
                 });
-                map.layers.add(this._layer);
             }
 
-            draw(features) {
-                this._layer.source.addMany(_.map(features, (feature) => ({
-                        geometry: new Point({
-                            latitude: feature.geometry[1],
-                            longitude: feature.geometry[0]
-                        }),
-                        attributes: feature
-                    })
-                ));
-            }
+            _createIconSymbol (type) {
+                let assetType = _.toUpper(type);
 
-            _createSymbol(type) {
                 return new PointSymbol3D({
                     symbolLayers: [
                         new IconSymbol3DLayer({
                             resource: {
-                                primitive: 'circle'
+                                href: assets.LOCATION_PIN[assetType]
                             },
-                            material: {
-                                color: 'white'
-                            },
-                            outline: {
-                                color: colors.LOCATIONS[type],
-                                size: 1
-                            },
-                            size: 20,
-                        }),
-                        new IconSymbol3DLayer({
-                            resource: {
-                                href: assets.LOCATION_PIN
-                            },
-                            material: {
-                                color: colors.LOCATIONS[type]
-                            },
-                            size: 15,
+                            size: 25
                         })
                     ],
-                    verticalOffset: {
-                        screenLength: 40,
-                        maxWorldLength: 200,
-                        minWorldLength: 35
-                    },
+                    verticalOffset: ICON_VERTICAL_OFFSET,
                     callout: new LineCallout3D({
                         size: 2,
-                        color: 'white',
-                        border: {
-                            color: 'white'
-                        }
+                        color: 'white'
                     })
                 });
+            }
+
+            _generateId() {
+                return ++id;
             }
         }
 

@@ -1,0 +1,15 @@
+<svg width="772.51629" height="772.51628" xmlns="http://www.w3.org/2000/svg">
+
+ <metadata id="metadata17">image/svg+xmlOpenclipart2013-04-16T08:39:00https://openclipart.org/detail/177208/map-location-by-snodnipper-177208snodnipperlocationmappinpinpointpointpointer</metadata>
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <g id="layer1">
+   <circle fill="#ffffff" fill-rule="evenodd" stroke="#bb0000" stroke-width="35" stroke-linejoin="round" stroke-miterlimit="4" r="368.758148" cy="386.258146" cx="386.258147" id="path4153"/>
+   <path fill="#bb0000" stroke-width="10.397" d="m386.250137,137.261156c-99.484,0 -179.81,80.41 -179.81,179.59c0,31.186 7.9688,60.528 21.938,86.094l157.88,264.31l157.88,-264.31c13.969,-25.566 21.938,-54.908 21.938,-86.094c0,-99.184 -80.328,-179.59 -179.81,-179.59l-0.016,0zm-2,104.37c0.6674,-0.0169 1.3285,0 2,0c42.975,0 77.812,34.838 77.812,77.813c0,42.975 -34.838,77.812 -77.812,77.812c-42.975,0 -77.812,-34.838 -77.812,-77.812c0,-42.303 33.766,-76.747 75.812,-77.813z" id="path4043"/>
+  </g>
+ </g>
+</svg>

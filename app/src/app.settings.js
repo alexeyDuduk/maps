@@ -4,7 +4,23 @@
     function createSettings() {
         const ASSETS_PATH = '/assets/';
 
+        const defaultIconSizes = {
+            verticalOffset: {
+                screenLength: 150,
+                maxWorldLength: 5000,
+                minWorldLength: 50
+            },
+            symbolSize: 25,
+            calloutSize: 4
+        };
+        const brandPrimaryColor = [ 30, 136, 229 ];
+
         return {
+            locations: {
+                PICKUP: 'PICKUP',
+                DELIVERY: 'DELIVERY',
+                INTERMEDIATE: 'INTERMEDIATE'
+            },
             camera: {
                 DEFAULT_ZOOM: 14,
                 INITIAL_TILT: 0,
@@ -22,11 +38,12 @@
                 MAX_POINTS_COUNT: 2000
             },
             colors: {
-                BRAND_PRIMARY: [ 30, 136, 229 ],
+                BRAND_PRIMARY: brandPrimaryColor,
                 LOCATIONS: {
                     NONE: [ 30, 136, 229 ],
-                    PICKUP: [ 61, 224, 61 ],
-                    DELIVERY: [ 187, 0, 0 ]
+                    //PICKUP: [ 61, 224, 61 ],
+                    //DELIVERY: [ 187, 0, 0 ],
+                    //INTERMEDIATE: [176, 236, 255]
                 }
             },
             routeBuilder: {
@@ -38,7 +55,21 @@
             assets: {
                 LOCATION_PIN: {
                     PICKUP: _assetsPrefixed('svg/location-pin-pickup.svg'),
-                    DELIVERY: _assetsPrefixed('svg/location-pin-delivery.svg')
+                    DELIVERY: _assetsPrefixed('svg/location-pin-delivery.svg'),
+                    INTERMEDIATE: _assetsPrefixed('svg/location-pin-intermediate.svg')
+                }
+            },
+            iconSizes: {
+                PICKUP: defaultIconSizes,
+                DELIVERY: defaultIconSizes,
+                INTERMEDIATE: {
+                    verticalOffset: {
+                        screenLength: 30,
+                        maxWorldLength: 2000,
+                        minWorldLength: 20
+                    },
+                    symbolSize: 25,
+                    calloutSize: 1
                 }
             }
         };

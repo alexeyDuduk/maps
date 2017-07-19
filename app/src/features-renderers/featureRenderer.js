@@ -17,21 +17,15 @@
         FeatureLayer,
         UniqueValueRenderer
     ) => {
-        const colors = window.EM.settings.colors;
-        const assets = window.EM.settings.assets;
-
-        const ICON_VERTICAL_OFFSET = {
-            screenLength: 150,
-            maxWorldLength: 5000,
-            minWorldLength: 50
-        };
+        const colors    = window.EM.settings.colors;
+        const assets    = window.EM.settings.assets;
+        const sizes     = window.EM.settings.iconSizes;
 
         let id = 0;
 
         class FeatureRenderer {
-            constructor (map) {
-                let iconTypes   = ['pickup', 'delivery'];
-                this._layer     = this._createLayer(map, iconTypes);
+            constructor (map, iconTypes) {
+                this._layer = this._createLayer(map, iconTypes);
             }
 
             draw (features) {
@@ -87,29 +81,26 @@
                     spatialReference: {
                         wkid: 4326
                     },
-                    title: 'Locations layer',
-                    featureReduction: {
-                        type: 'selection'
-                    }
+                    title: 'Locations layer'
                 });
             }
 
             _createIconSymbol (type) {
-                let assetType = _.toUpper(type);
+                let size = sizes[type];
 
                 return new PointSymbol3D({
                     symbolLayers: [
                         new IconSymbol3DLayer({
                             resource: {
-                                href: assets.LOCATION_PIN[assetType]
+                                href: assets.LOCATION_PIN[type]
                             },
-                            size: 25
+                            size: size.symbolSize,
                         })
                     ],
-                    verticalOffset: ICON_VERTICAL_OFFSET,
+                    verticalOffset: size.verticalOffset,
                     callout: new LineCallout3D({
-                        size: 2,
-                        color: 'white'
+                        size: size.calloutSize,
+                        color:  colors.LOCATIONS[type] || 'white'
                     })
                 });
             }

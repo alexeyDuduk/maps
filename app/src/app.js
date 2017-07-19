@@ -19,21 +19,25 @@ require([
     'use strict';
 
     const EM = window.EM;
+    const settings = EM.settings;
 
     setTimeout(init, 300);
 
 
     function init () {
-        //let dataProvider = new EM.HyderabadDataProvider();
-        //let dataProvider = new EM.MinskDataProvider();
-        //let dataProvider = new EM.GpsiesDataProvider('bayreuth-10k');
-        let dataProvider = new EM.ProdDataProvider('prod-4');
-        dataProvider = new EM.RouteTaskDataProviderWrapper(dataProvider);
+        //let originalDataProvider = new EM.HyderabadDataProvider();
+        //let originalDataProvider = new EM.MinskDataProvider();
+        //let originalDataProvider = new EM.GpsiesDataProvider('bayreuth-10k');
+        let originalDataProvider = new EM.ProdDataProvider('prod-4');
+        originalDataProvider = new EM.CachingDataProviderWrapper(originalDataProvider);
+        let dataProvider = new EM.RouteTaskDataProviderWrapper(originalDataProvider);
 
         promiseUtils.eachAlways([
+            originalDataProvider.getPoints(),
             dataProvider.getPoints(),
             dataProvider.getLocations()
         ]).then(([
+                     {value: originalPoints = []},
                      {value: points = []},
                      {value: locations = []}
                  ]) => {
@@ -77,10 +81,13 @@ require([
             let routeRenderer = new EM.CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
             //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
 
-            let featureRenderer = new EM.FeatureRenderer(map);
+            let featureRenderer = new EM.FeatureRenderer(map, [ settings.locations.PICKUP, settings.locations.DELIVERY ]);
+            let luFeatureRenderer = new EM.FeatureRenderer(map, [ settings.locations.INTERMEDIATE ]);    // real location updates points
+            let originalLuFeatures = convertPointsToFeatures(originalPoints);
 
             view.then(() => {
                 featureRenderer.draw(locations);
+                luFeatureRenderer.draw(originalLuFeatures);
                 setTimeout(() => {
                     routeRenderer.draw(segmentGenerator);
                 }, 1000);
@@ -93,5 +100,14 @@ require([
         let step = Math.floor(points.length / EM.settings.route.MAX_POINTS_COUNT);
 
         return step ? new EM.PathSegmentGenerator(points, step) : new EM.PointSegmentGenerator(points);
+    }
+
+    function convertPointsToFeatures(points) {
+        return _.map(points, (item, index) => ({
+                geometry:       item,
+                type:           settings.locations.INTERMEDIATE,
+                id:             index
+            })
+        );
     }
 });

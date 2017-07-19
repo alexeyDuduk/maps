@@ -2,6 +2,8 @@
     "use strict";
 
     require(['esri/request'], (request) => {
+        const locations = window.EM.settings.locations;
+
         class ProdDataProvider extends window.EM.BaseDataProvider {
             constructor(name) {
                 super();
@@ -17,7 +19,7 @@
                 return request(`stubs/locations/${this._name}.json`, { responseType: 'json' })
                     .then((response) => _.map(response.data, (item, index) => ({
                             geometry: item.location.address.gps.coordinates,
-                            type: _.toLower(item.type.value || 'none'),
+                            type: locations[_.toUpper(item.type.value || 'none')],
                             displayName: item.name,
                             id: index
                         }))

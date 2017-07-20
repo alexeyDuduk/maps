@@ -28,14 +28,14 @@
                 TOTAL_VIEW_TILT: 30,
                 HEADING_TARGET_POINTS_COUNT: 20,
                 SCALE_TARGET_POINTS_COUNT: 10,
-                POINTS_COUNT_PER_CAMERA_POSITION: 4,
-                SPEED_FACTOR: 1,
+                POINTS_COUNT_PER_CAMERA_POSITION: 1,
+                SPEED_FACTOR: 4,
                 INITIAL_TRANSITION_DURATION: 4000,
-                FRAME_DURATION: 100,
+                FRAME_DURATION: 200,
                 TOTAL_VIEW_TRANSITION_DURATION: 4000
             },
             route: {
-                MAX_POINTS_COUNT: 2000
+                MAX_POINTS_COUNT: 1000
             },
             colors: {
                 BRAND_PRIMARY: brandPrimaryColor,

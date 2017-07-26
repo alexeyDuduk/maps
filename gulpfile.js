@@ -2,10 +2,10 @@
 (function () {
     'use strict';
 
-    var jsFiles = [ 'app/*.index.js', 'app/**/*.index.js', 'app/*.js', 'app/**/*.js' ];
-    var jsVendors = [];
-    var stylesFiles = 'app/**/*.scss';
-    var stylesVendors = [ ];
+    var jsFiles         = [ 'app/*.index.js', 'app/**/*.index.js', 'app/*.js', 'app/**/*.js' ];
+    var jsVendors       = [];
+    var stylesFiles     = 'app/**/*.scss';
+    var stylesVendors   = [ ];
 
     var gulp            = require('gulp');
     var sass            = require('gulp-sass');
@@ -14,6 +14,7 @@
     var uglify          = require('gulp-uglify');
     var rename          = require('gulp-rename');
     var concat          = require('gulp-concat');
+    var babel           = require('gulp-babel');
 
     // env specific dependencies
     var notify          = null;
@@ -25,8 +26,8 @@
 
 
     function registerInitEnvTasks() {
-        notify      = require('gulp-notify');
-        browserSync = require('browser-sync');
+        notify          = require('gulp-notify');
+        browserSync     = require('browser-sync');
         jshint          = require('gulp-jshint');
         jshintStylish   = require('jshint-stylish');
     }
@@ -45,7 +46,11 @@
         });
 
         gulp.task('build-scripts', function () {
-            var stream = gulp.src(jsFiles) .pipe(concat('app.js'));
+            var stream = gulp.src(jsFiles)
+                .pipe(concat('app.js'))
+                .pipe(babel({
+                    presets: ['es2015']
+                }));
 
             //stream = stream.pipe(uglify());
 

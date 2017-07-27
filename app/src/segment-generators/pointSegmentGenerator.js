@@ -6,7 +6,7 @@
             constructor(points) {
                 this._points = points;
                 this._currentPoint = null;
-                this._provider = points[Symbol.iterator]();
+                this._provider = _getIterator(points);
             }
 
             getSegment() {
@@ -38,5 +38,20 @@
         }
 
         window.EM.PointSegmentGenerator = PointSegmentGenerator;
+
+        function _getIterator(array) {
+            let index = -1;
+
+            return {
+                next: () => {
+                    index++;
+
+                    return {
+                        value: array[index],
+                        done: index >= array.length
+                    };
+                }
+            }
+        }
     });
 })();

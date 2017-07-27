@@ -7,6 +7,7 @@ require([
     'esri/symbols/SimpleLineSymbol',
     'esri/symbols/LineSymbol3D',
     'esri/symbols/LineSymbol3DLayer',
+    'esri/identity/IdentityManager',
     'dojo/domReady!'
 ], function (promiseUtils,
              Map,
@@ -15,7 +16,9 @@ require([
              Polyline,
              SimpleLineSymbol,
              LineSymbol3D,
-             LineSymbol3DLayer) {
+             LineSymbol3DLayer,
+             IdentityManager
+ ) {
     'use strict';
 
     const EM = window.EM;
@@ -23,8 +26,13 @@ require([
 
     setTimeout(init, 300);
 
-
     function init () {
+
+        IdentityManager.registerToken({
+            server: 'https://route.arcgis.com/arcgis/rest/services',
+            token:  'k033vEafZ518YyQEZ2jguJLm57ycI_ymIPAABv_sWnHmvBxm9wQMsRT4DRlz8IN3IPQZxBy4CnF0cfTB_CuP1lL5HkMjBb1kpe-KJ5lPE6jWD6qM8E1mnGFmRAkMWN4AeoCWTiveLLZIbInF8n-z9g..'
+        });
+
         //let originalDataProvider = new EM.HyderabadDataProvider();
         //let originalDataProvider = new EM.MinskDataProvider();
         //let originalDataProvider = new EM.GpsiesDataProvider('bayreuth-10k');
@@ -86,10 +94,13 @@ require([
             let originalLuFeatures = convertPointsToFeatures(originalPoints);
 
             view.then(() => {
+                console.log('phantom:start');
                 featureRenderer.draw(locations);
                 luFeatureRenderer.draw(originalLuFeatures);
                 setTimeout(() => {
-                    routeRenderer.draw(segmentGenerator);
+                    routeRenderer.draw(segmentGenerator).then(() => {
+                        console.log('phantom:finish');
+                    });
                 }, 1000);
             })
                 .otherwise(() => console.log('view.otherwise'));

@@ -7,3 +7,5 @@ dist
 .tmp
 .sass-cache
 libs
+screenshot
+video.*

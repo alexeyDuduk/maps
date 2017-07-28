@@ -56,10 +56,10 @@ define([
         }
 
         init () {
-            /*IdentityManager.registerToken({
-                server: 'https://route.arcgis.com/arcgis/rest/services',
-                token: 'k033vEafZ518YyQEZ2jguJLm57ycI_ymIPAABv_sWnHmvBxm9wQMsRT4DRlz8IN3IPQZxBy4CnF0cfTB_CuP1lL5HkMjBb1kpe-KJ5lPE6jWD6qM8E1mnGFmRAkMWN4AeoCWTiveLLZIbInF8n-z9g..'
-            });*/
+            IdentityManager.registerToken({
+                server: settings.access.server,
+                token: settings.access.token
+            });
 
             //let originalDataProvider = new HyderabadDataProvider();
             //let originalDataProvider = new MinskDataProvider();

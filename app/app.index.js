@@ -1,7 +1,8 @@
 require([
+    'app/vendor/es6-collections',
     'app/app',
     'dojo/domReady!'
-], (App) => {
+], (ES6, App) => {
     'use strict';
 
     let app = new App();

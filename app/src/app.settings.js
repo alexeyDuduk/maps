@@ -15,6 +15,10 @@ define(() => {
     const brandPrimaryColor = [ 30, 136, 229 ];
 
     return {
+        access: {
+            server: 'https://route.arcgis.com/arcgis/rest/services',
+            token: 'g9dW2EOansLis3Ek0j6P3SZ-FXZtQZ-yFnUo0k9gmoI0UzO1r39BIXqgR4KNLxFFWwIB6grDavlYAM8W4K7OvfxQ3UrLc5rK8prmvzfC5YOLNjx8_NVYQAqNOGkdIEz-ql-Fsa4S7e7ZXiF84rrLUg..'
+        },
         locations: {
             PICKUP: 'PICKUP',
             DELIVERY: 'DELIVERY',

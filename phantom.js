@@ -10,6 +10,7 @@ var onConsoleMessage = function (message) {
     switch (message) {
         case 'phantom:start':
             startRender(400);
+            // console.log(message);
             break;
         case 'phantom:end':
             phantom.exit();

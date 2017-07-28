@@ -1,6 +1,6 @@
 define([
     'app/app.settings',
-    'app/utils/PromiseUtils'
+    'app/utils/promiseUtils'
 ], (appSettings, PromiseUtils) => {
     'use strict';
 

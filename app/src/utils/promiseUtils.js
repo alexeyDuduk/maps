@@ -41,5 +41,10 @@ define([
         static reject(value) {
             return promiseUtils.reject(value);
         }
+
+        static whenAll(promises) {
+            return promiseUtils.eachAlways(promises)
+                .then((results) => _.map(results, (result) => result.value));
+        }
     };
 });

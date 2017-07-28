@@ -1,13 +1,13 @@
-define(['esri/core/promiseUtils'], (promiseUtils) => {
+define(['app/utils/promiseUtils'], (PromiseUtils) => {
     'use strict';
 
     return class BaseDataProvider {
         getPoints() {
-            return promiseUtils.resolve([]);
+            return PromiseUtils.resolve([]);
         }
 
         getLocations() {
-            return promiseUtils.resolve([]);
+            return PromiseUtils.resolve([]);
         }
     };
 });

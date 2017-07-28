@@ -1,8 +1,7 @@
 define([
-    'esri/core/promiseUtils',
     'app/app.settings',
     'app/utils/PromiseUtils'
-], (promiseUtils, appSettings, PromiseUtils) => {
+], (appSettings, PromiseUtils) => {
     'use strict';
 
     const settings = appSettings.camera;
@@ -65,7 +64,7 @@ define([
 
             let promise = (++this._index) % this._segmentsPerCameraPosition === 0 ?
                 this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
-                promiseUtils.resolve();
+                PromiseUtils.resolve();
 
             return promise.then(() => PromiseUtils.timeout(() => {}, frameDuration / 2))
                 .then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()))

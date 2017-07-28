@@ -1,5 +1,4 @@
 define([
-    'esri/core/promiseUtils',
     'esri/Map',
     'esri/views/MapView',
     'esri/views/SceneView',
@@ -22,9 +21,9 @@ define([
     'app/route-renderers/timeoutDrivenRouteRenderer',
     'app/features-renderers/featureRenderer',
     'app/segment-generators/pathSegmentGenerator',
-    'app/segment-generators/pointSegmentGenerator'
-], (promiseUtils,
-    Map,
+    'app/segment-generators/pointSegmentGenerator',
+    'app/utils/promiseUtils'
+], (Map,
     MapView,
     SceneView,
     Polyline,
@@ -46,13 +45,14 @@ define([
     TimeoutDrivenRouteRenderer,
     FeatureRenderer,
     PathSegmentGenerator,
-    PointSegmentGenerator
+    PointSegmentGenerator,
+    PromiseUtils
 ) => {
     'use strict';
 
     return class App {
         run () {
-            setTimeout(() => this.init(), 300);
+            return PromiseUtils.timeout(() => this.init(), 300);
         }
 
         init () {
@@ -68,14 +68,14 @@ define([
             originalDataProvider = new CachingDataProviderWrapper(originalDataProvider);
             let dataProvider = new RouteTaskDataProviderWrapper(originalDataProvider);
 
-            promiseUtils.eachAlways([
+            PromiseUtils.whenAll([
                 originalDataProvider.getPoints(),
                 dataProvider.getPoints(),
                 dataProvider.getLocations()
             ]).then(([
-                         {value: originalPoints = []},
-                         {value: points = []},
-                         {value: locations = []}
+                         originalPoints = [],
+                         points = [],
+                         locations = []
                      ]) => {
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
                 let cameraProvider = new CameraProvider(segmentGenerator);
@@ -125,12 +125,10 @@ define([
                     console.log('phantom:start');
                     featureRenderer.draw(locations);
                     luFeatureRenderer.draw(originalLuFeatures);
-                    setTimeout(() => {
-                        routeRenderer.draw(segmentGenerator).then(() => {
-                            console.log('phantom:finish');
-                        });
-                    }, 1000);
                 })
+                    .then(() => PromiseUtils.timeout(() => {}, 1000))
+                    .then(() => routeRenderer.draw(segmentGenerator))
+                    .then(() => console.log('phantom:finish'))
                     .otherwise(() => console.log('view.otherwise'));
             });
         }

@@ -1,7 +1,7 @@
 define([
-    'esri/core/promiseUtils',
+    'app/utils/promiseUtils',
     'app/data-providers/baseDataProvider'
-], (promiseUtils, BaseDataProvider) => {
+], (PromiseUtils, BaseDataProvider) => {
     'use strict';
 
     return class CachingDataProviderWrapper extends BaseDataProvider {
@@ -22,7 +22,7 @@ define([
 
         _execute(actionName, cachePath) {
             if (this[cachePath]) {
-                return promiseUtils.resolve(this[cachePath]);
+                return PromiseUtils.resolve(this[cachePath]);
             }
             else {
                 return this._dataProvider[actionName]()

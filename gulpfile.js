@@ -15,6 +15,7 @@
     var rename          = require('gulp-rename');
     var concat          = require('gulp-concat');
     var babel           = require('gulp-babel');
+    var inject          = require('gulp-inject');
 
     // env specific dependencies
     var notify          = null;
@@ -47,7 +48,7 @@
 
         gulp.task('build-scripts', function () {
             var stream = gulp.src(jsFiles)
-                .pipe(concat('app.js'))
+                //.pipe(concat('app.js'))
                 .pipe(babel({
                     presets: ['es2015']
                 }));
@@ -68,7 +69,22 @@
         });
 
         gulp.task('copy-html', function () {
+            var options = {
+                starttag: '<!-- inject:dojoConfig -->',
+                transform: function (filePath, file) {
+                    return [
+                        '<script>',
+                        file.contents.toString('utf8')
+                            .replace(/%NAME%/g, 'app')
+                            .replace(/%PATH%/g, '/scripts/src')
+                            .replace(/%MAIN%/g, '../app.index'),
+                        '</script>'
+                        ].join('\n');
+                }
+            };
+
             return gulp.src('app/*.html')
+                .pipe(inject(gulp.src(['dojoConfig.js']), options))
                 .pipe(gulp.dest('dist/'));
         });
 

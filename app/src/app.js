@@ -1,4 +1,4 @@
-require([
+define([
     'esri/core/promiseUtils',
     'esri/Map',
     'esri/views/MapView',
@@ -8,117 +8,146 @@ require([
     'esri/symbols/LineSymbol3D',
     'esri/symbols/LineSymbol3DLayer',
     'esri/identity/IdentityManager',
-    'dojo/domReady!'
-], function (promiseUtils,
-             Map,
-             MapView,
-             SceneView,
-             Polyline,
-             SimpleLineSymbol,
-             LineSymbol3D,
-             LineSymbol3DLayer,
-             IdentityManager
- ) {
+    'app/app.settings',
+    'app/data-providers/hyderabadDataProvider',
+    'app/data-providers/minskDataProvider',
+    'app/data-providers/gpsiesDataProvider',
+    'app/data-providers/prodDataProvider',
+    'app/data-providers/cachingDataProviderWrapper',
+    'app/data-providers/routeTaskDataProviderWrapper',
+    'app/camera/cameraProvider',
+    'app/route-segment-renderers/graphicRouteSegmentRenderer',
+    'app/route-segment-renderers/polyRouteSegmentRenderer',
+    'app/route-renderers/cameraPromiseDrivenRouteRenderer',
+    'app/route-renderers/timeoutDrivenRouteRenderer',
+    'app/features-renderers/featureRenderer',
+    'app/segment-generators/pathSegmentGenerator',
+    'app/segment-generators/pointSegmentGenerator'
+], (promiseUtils,
+    Map,
+    MapView,
+    SceneView,
+    Polyline,
+    SimpleLineSymbol,
+    LineSymbol3D,
+    LineSymbol3DLayer,
+    IdentityManager,
+    settings,
+    HyderabadDataProvider,
+    MinskDataProvider,
+    GpsiesDataProvider,
+    ProdDataProvider,
+    CachingDataProviderWrapper,
+    RouteTaskDataProviderWrapper,
+    CameraProvider,
+    GraphicRouteSegmentRenderer,
+    PolyRouteSegmentRenderer,
+    CameraPromiseDrivenRouteRenderer,
+    TimeoutDrivenRouteRenderer,
+    FeatureRenderer,
+    PathSegmentGenerator,
+    PointSegmentGenerator
+) => {
     'use strict';
 
-    const EM = window.EM;
-    const settings = EM.settings;
+    return class App {
+        run () {
+            setTimeout(() => this.init(), 300);
+        }
 
-    setTimeout(init, 300);
+        init () {
+            /*IdentityManager.registerToken({
+                server: 'https://route.arcgis.com/arcgis/rest/services',
+                token: 'k033vEafZ518YyQEZ2jguJLm57ycI_ymIPAABv_sWnHmvBxm9wQMsRT4DRlz8IN3IPQZxBy4CnF0cfTB_CuP1lL5HkMjBb1kpe-KJ5lPE6jWD6qM8E1mnGFmRAkMWN4AeoCWTiveLLZIbInF8n-z9g..'
+            });*/
 
-    function init () {
+            //let originalDataProvider = new HyderabadDataProvider();
+            //let originalDataProvider = new MinskDataProvider();
+            //let originalDataProvider = new GpsiesDataProvider('bayreuth-10k');
+            let originalDataProvider = new ProdDataProvider('prod-4');
+            originalDataProvider = new CachingDataProviderWrapper(originalDataProvider);
+            let dataProvider = new RouteTaskDataProviderWrapper(originalDataProvider);
 
-        IdentityManager.registerToken({
-            server: 'https://route.arcgis.com/arcgis/rest/services',
-            token:  'k033vEafZ518YyQEZ2jguJLm57ycI_ymIPAABv_sWnHmvBxm9wQMsRT4DRlz8IN3IPQZxBy4CnF0cfTB_CuP1lL5HkMjBb1kpe-KJ5lPE6jWD6qM8E1mnGFmRAkMWN4AeoCWTiveLLZIbInF8n-z9g..'
-        });
+            promiseUtils.eachAlways([
+                originalDataProvider.getPoints(),
+                dataProvider.getPoints(),
+                dataProvider.getLocations()
+            ]).then(([
+                         {value: originalPoints = []},
+                         {value: points = []},
+                         {value: locations = []}
+                     ]) => {
+                let segmentGenerator = this._createRouteSegmentGenerator(points);
+                let cameraProvider = new CameraProvider(segmentGenerator);
 
-        //let originalDataProvider = new EM.HyderabadDataProvider();
-        //let originalDataProvider = new EM.MinskDataProvider();
-        //let originalDataProvider = new EM.GpsiesDataProvider('bayreuth-10k');
-        let originalDataProvider = new EM.ProdDataProvider('prod-4');
-        originalDataProvider = new EM.CachingDataProviderWrapper(originalDataProvider);
-        let dataProvider = new EM.RouteTaskDataProviderWrapper(originalDataProvider);
+                let map = new Map({
+                    basemap: 'hybrid',
+                    ground: 'world-elevation'
+                });
 
-        promiseUtils.eachAlways([
-            originalDataProvider.getPoints(),
-            dataProvider.getPoints(),
-            dataProvider.getLocations()
-        ]).then(([
-                     {value: originalPoints = []},
-                     {value: points = []},
-                     {value: locations = []}
-                 ]) => {
-            let segmentGenerator = createRouteSegmentGenerator(points);
-            let cameraProvider = new EM.CameraProvider(segmentGenerator);
+                let camera = cameraProvider.getInitialCamera();
+                let view = new SceneView({
+                    center: camera.center,
+                    container: 'view-div',
+                    map: map,
+                    zoom: camera.zoom,
+                    tilt: camera.tilt
+                });
 
-            let map = new Map({
-                basemap: 'hybrid',
-                ground: 'world-elevation'
+                let lineSymbol = new LineSymbol3D({
+                    symbolLayers: [
+                        new LineSymbol3DLayer({
+                            material: {
+                                color: settings.colors.BRAND_PRIMARY
+                            },
+                            size: 4
+                        })
+                    ]
+                });
+
+                let lineAtt = {
+                    Name: 'Keystone Pipeline',
+                    Owner: 'TransCanada',
+                    Length: '3,456 km'
+                };
+
+                let segmentRenderer = new GraphicRouteSegmentRenderer(map, lineSymbol, lineAtt);
+                //let segmentRenderer = new PolyRouteSegmentRenderer(view, lineSymbol, lineAtt);
+
+                let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
+                //let routeRenderer = new TimeoutDrivenRouteRenderer(segmentRenderer);
+
+                let featureRenderer = new FeatureRenderer(map, [settings.locations.PICKUP, settings.locations.DELIVERY]);
+                let luFeatureRenderer = new FeatureRenderer(map, [settings.locations.INTERMEDIATE]);    // real location updates points
+                let originalLuFeatures = this._convertPointsToFeatures(originalPoints);
+
+                view.then(() => {
+                    console.log('phantom:start');
+                    featureRenderer.draw(locations);
+                    luFeatureRenderer.draw(originalLuFeatures);
+                    setTimeout(() => {
+                        routeRenderer.draw(segmentGenerator).then(() => {
+                            console.log('phantom:finish');
+                        });
+                    }, 1000);
+                })
+                    .otherwise(() => console.log('view.otherwise'));
             });
+        }
 
-            let camera = cameraProvider.getInitialCamera();
-            let view = new SceneView({
-                center: camera.center,
-                container: 'view-div',
-                map: map,
-                zoom: camera.zoom,
-                tilt: camera.tilt
-            });
+        _createRouteSegmentGenerator (points) {
+            let step = Math.floor(points.length / settings.route.MAX_POINTS_COUNT);
 
-            let lineSymbol = new LineSymbol3D({
-                symbolLayers: [
-                    new LineSymbol3DLayer({
-                        material: {
-                            color: EM.settings.colors.BRAND_PRIMARY
-                        },
-                        size: 4
-                    })
-                ]
-            });
+            return step ? new PathSegmentGenerator(points, step) : new PointSegmentGenerator(points);
+        }
 
-            let lineAtt = {
-                Name: 'Keystone Pipeline',
-                Owner: 'TransCanada',
-                Length: '3,456 km'
-            };
-
-            let segmentRenderer = new EM.GraphicRouteSegmentRenderer(map, lineSymbol, lineAtt);
-            //let segmentRenderer = new EM.PolyRouteSegmentRenderer(view, lineSymbol, lineAtt);
-
-            let routeRenderer = new EM.CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
-            //let routeRenderer = new EM.TimeoutDrivenRouteRenderer(segmentRenderer);
-
-            let featureRenderer = new EM.FeatureRenderer(map, [ settings.locations.PICKUP, settings.locations.DELIVERY ]);
-            let luFeatureRenderer = new EM.FeatureRenderer(map, [ settings.locations.INTERMEDIATE ]);    // real location updates points
-            let originalLuFeatures = convertPointsToFeatures(originalPoints);
-
-            view.then(() => {
-                console.log('phantom:start');
-                featureRenderer.draw(locations);
-                luFeatureRenderer.draw(originalLuFeatures);
-                setTimeout(() => {
-                    routeRenderer.draw(segmentGenerator).then(() => {
-                        console.log('phantom:finish');
-                    });
-                }, 1000);
-            })
-                .otherwise(() => console.log('view.otherwise'));
-        });
-    }
-
-    function createRouteSegmentGenerator (points) {
-        let step = Math.floor(points.length / EM.settings.route.MAX_POINTS_COUNT);
-
-        return step ? new EM.PathSegmentGenerator(points, step) : new EM.PointSegmentGenerator(points);
-    }
-
-    function convertPointsToFeatures(points) {
-        return _.map(points, (item, index) => ({
-                geometry:       item,
-                type:           settings.locations.INTERMEDIATE,
-                id:             index
-            })
-        );
-    }
+        _convertPointsToFeatures (points) {
+            return _.map(points, (item, index) => ({
+                    geometry: item,
+                    type: settings.locations.INTERMEDIATE,
+                    id: index
+                })
+            );
+        }
+    };
 });

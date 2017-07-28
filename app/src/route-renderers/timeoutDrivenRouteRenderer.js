@@ -1,31 +1,27 @@
-(function () {
-    "use strict";
+define(['app/app.settings'], (appSettings) => {
+    'use strict';
 
-    require([], () => {
-        const settings = window.EM.settings.camera;
+    const settings = appSettings.camera;
 
-        class TimeoutDrivenRouteRenderer {
-            constructor(segmentRenderer) {
-                this._segmentRenderer = segmentRenderer;
-            }
-
-            draw(segmentGenerator) {
-                let intervalId = setInterval(function () {
-                    try {
-                        if (!segmentGenerator.moveToNext()) {
-                            clearInterval(intervalId);
-                            intervalId = null;
-                            return;
-                        }
-                        this._segmentRenderer.addPath(segmentGenerator.getSegment());
-                    }
-                    catch (e) {
-                        console.log(e);
-                    }
-                }, settings.FRAME_DURATION);
-            }
+    return class TimeoutDrivenRouteRenderer {
+        constructor(segmentRenderer) {
+            this._segmentRenderer = segmentRenderer;
         }
 
-        window.EM.TimeoutDrivenRouteRenderer = TimeoutDrivenRouteRenderer;
-    });
-})();
+        draw(segmentGenerator) {
+            let intervalId = setInterval(function () {
+                try {
+                    if (!segmentGenerator.moveToNext()) {
+                        clearInterval(intervalId);
+                        intervalId = null;
+                        return;
+                    }
+                    this._segmentRenderer.addPath(segmentGenerator.getSegment());
+                }
+                catch (e) {
+                    console.log(e);
+                }
+            }, settings.FRAME_DURATION);
+        }
+    };
+});

@@ -91,6 +91,6 @@
     "_"             : false,
     "moment"        : false,
     "require"       : false,
-    "declare"       : false
+    "define"        : false
   }        // additional predefined global variables
 }

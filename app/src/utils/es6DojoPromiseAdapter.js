@@ -1,7 +1,7 @@
-(function() {
-    "use strict";
+define(() => {
+    'use strict';
 
-    class Es6DojoPromiseAdapter {
+    return class Es6DojoPromiseAdapter {
         constructor(es6Promise) {
             this._promise = es6Promise;
         }
@@ -13,7 +13,5 @@
         otherwise(callback) {
             return new Es6DojoPromiseAdapter(this._promise.catch(callback));
         }
-    }
-
-    window.EM.Es6DojoPromiseAdapter = Es6DojoPromiseAdapter;
-})();
+    };
+});

@@ -1,5 +1,9 @@
-(function () {
+require([
+    'app/app',
+    'dojo/domReady!'
+], (App) => {
     'use strict';
 
-    window.EM = {};
-})();
+    let app = new App();
+    app.run();
+});

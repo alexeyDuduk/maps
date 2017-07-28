@@ -1,11 +1,10 @@
-require([
-    'esri/core/promiseUtils'
-], (promiseUtils) => {
-    "use strict";
+define([
+    'esri/core/promiseUtils',
+    'app/utils/es6DojoPromiseAdapter'
+], (promiseUtils, Es6DojoPromiseAdapter) => {
+    'use strict';
 
-    const EM = window.EM;
-
-    class PromiseUtils {
+    return class PromiseUtils {
         static timeout(func, delay) {
             let promise = new Promise((resolve, reject) => {
                 let timeoutId = setTimeout(() => {
@@ -21,7 +20,7 @@ require([
                 }, delay);
             });
 
-            return new EM.Es6DojoPromiseAdapter(promise);
+            return new Es6DojoPromiseAdapter(promise);
         }
 
         static defer() {
@@ -30,7 +29,7 @@ require([
                 deferred.resolve = resolve;
                 deferred.reject = reject;
             });
-            deferred.promise = new EM.Es6DojoPromiseAdapter(promise);
+            deferred.promise = new Es6DojoPromiseAdapter(promise);
 
             return deferred;
         }
@@ -42,7 +41,5 @@ require([
         static reject(value) {
             return promiseUtils.reject(value);
         }
-    }
-
-    window.EM.PromiseUtils = PromiseUtils;
+    };
 });

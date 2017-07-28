@@ -1,17 +1,13 @@
-(function () {
-    "use strict";
+define(['esri/core/promiseUtils'], (promiseUtils) => {
+    'use strict';
 
-    require(['esri/core/promiseUtils'], (promiseUtils) => {
-        class BaseDataProvider {
-            getPoints() {
-                return promiseUtils.resolve([]);
-            }
-
-            getLocations() {
-                return promiseUtils.resolve([]);
-            }
+    return class BaseDataProvider {
+        getPoints() {
+            return promiseUtils.resolve([]);
         }
 
-        window.EM.BaseDataProvider = BaseDataProvider;
-    });
-})();
+        getLocations() {
+            return promiseUtils.resolve([]);
+        }
+    };
+});

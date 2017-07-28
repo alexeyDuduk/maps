@@ -123,12 +123,14 @@ define([
 
                 view.then(() => {
                     console.log('phantom:start');
+                    console.time('rendering');
+
                     featureRenderer.draw(locations);
-                    luFeatureRenderer.draw(originalLuFeatures);
+                    // luFeatureRenderer.draw(originalLuFeatures);
                 })
                     .then(() => PromiseUtils.timeout(() => {}, 1000))
                     .then(() => routeRenderer.draw(segmentGenerator))
-                    .then(() => console.log('phantom:finish'))
+                    .then(() => { console.log('phantom:finish'); console.timeEnd('rendering'); })
                     .otherwise(() => console.log('view.otherwise'));
             });
         }

@@ -6,13 +6,21 @@ var startRender = function (interval) {
     }, interval);
 };
 
+var screenshot = function (delay) {
+    setTimeout(function () {
+        page.render('screenshot.png', { format: "png" });
+        console.log('screenshot');
+    }, delay);
+};
+
 var onConsoleMessage = function (message) {
     switch (message) {
         case 'phantom:start':
             startRender(400);
+            // screenshot(3000);
             // console.log(message);
             break;
-        case 'phantom:end':
+        case 'phantom:finish':
             phantom.exit();
             break;
         default:

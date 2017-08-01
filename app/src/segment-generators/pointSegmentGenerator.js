@@ -1,9 +1,13 @@
-define(() => {
+define([
+    'app/utils/pointUtils',
+    'app/vendor/simplify'
+], (PointUtils, simplify) => {
     'use strict';
 
     return class PointSegmentGenerator {
         constructor(points) {
             this._points = points;
+            this._interpolatedPoints = this.getInterpolatedPointsSet(points.length);
             this._currentPoint = null;
             this._provider = _getIterator(points);
         }
@@ -24,7 +28,12 @@ define(() => {
         }
 
         getCurrentPoint() {
-            return this._currentPoint;
+            // return this._currentPoint;
+            return this._interpolatedPoints[this.getCurrentPointIndex()];
+        }
+
+        getCurrentPointIndex() {
+            return PointUtils.findPointIndex(this._currentPoint, this._points);
         }
 
         getPoints() {
@@ -33,6 +42,27 @@ define(() => {
 
         getPointsCountInSegment() {
             return 1;
+        }
+
+        getPointsSet(count) {
+            return this._points.slice(0, count);
+        }
+
+        getInterpolatedPointsSet(count) {
+            let originalPoints = this._points.slice(0, count);
+            let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
+            let result = [];
+
+            points = simplify(points, 0.01, true);
+            points = points.map(point => [point.x, point.y]);
+
+            let filledPoints = points.reduce((result, point, index) => {
+                if (!index) return result;
+                let count = PointUtils.findPointIndex(point, originalPoints) - result.length;
+                return result.concat(PointUtils.fillWithIntermediatePoints([points[index - 1], point], count));
+            }, []);
+
+            return filledPoints;
         }
     };
 

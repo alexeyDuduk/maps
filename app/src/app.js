@@ -71,7 +71,7 @@ define([
             PromiseUtils.whenAll([
                 originalDataProvider.getPoints(),
                 dataProvider.getPoints(),
-                dataProvider.getLocations()
+                // dataProvider.getLocations()
             ]).then(([
                          originalPoints = [],
                          points = [],

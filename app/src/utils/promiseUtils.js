@@ -9,7 +9,7 @@ define([
             let deferred = new Deferred();
             let timeoutId = setTimeout(() => {
                 try {
-                    let result = func();
+                    let result = func ? func() : null;
                     deferred.resolve(result);
                 } catch (e) {
                     deferred.reject(e);

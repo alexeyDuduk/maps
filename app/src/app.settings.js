@@ -17,7 +17,7 @@ define(() => {
     return {
         access: {
             server: 'https://route.arcgis.com/arcgis/rest/services',
-            token: 'g9dW2EOansLis3Ek0j6P3SZ-FXZtQZ-yFnUo0k9gmoI0UzO1r39BIXqgR4KNLxFFWwIB6grDavlYAM8W4K7OvfxQ3UrLc5rK8prmvzfC5YOLNjx8_NVYQAqNOGkdIEz-ql-Fsa4S7e7ZXiF84rrLUg..'
+            token: 'XG0xPtuvUgevQyx-K6coAyomyu3g9-pve_EbIaQ1e3FvXDF461YbvHkwNkSrOsD2goMu3aUbRphnfwgZGi5-zx8EP2PANCAptyU3T7H7Vrr0NHDU3paKh-X-swpAm3B2MWR2Qs1prcq2fdwvVFcvpA..'
         },
         locations: {
             PICKUP: 'PICKUP',
@@ -27,11 +27,11 @@ define(() => {
         camera: {
             DEFAULT_ZOOM: 14,
             INITIAL_TILT: 0,
-            ROUTE_TILT: 70,
+            ROUTE_TILT: 60,
             TOTAL_VIEW_TILT: 30,
             HEADING_TARGET_POINTS_COUNT: 50,
             SCALE_TARGET_POINTS_COUNT: 30,
-            POINTS_COUNT_PER_CAMERA_POSITION: 4,
+            POINTS_COUNT_PER_CAMERA_POSITION: 1,
             SPEED_FACTOR: 4,
             INITIAL_TRANSITION_DURATION: 8000,
             FRAME_DURATION: 200,

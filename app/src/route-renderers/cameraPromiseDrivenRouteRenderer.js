@@ -18,6 +18,8 @@ define([
         draw(segmentGenerator) {
             this._beforeDraw(segmentGenerator);
 
+            // return this._showPath(segmentGenerator);
+
             return this._moveToInitialScene()
                 .then(() => this._runIntro(segmentGenerator))
                 .then(() => this._runByRoute(segmentGenerator))
@@ -39,6 +41,22 @@ define([
             let camera = this._cameraProvider.getCamera(point);
 
             return this._view.goTo(camera, { duration: settings.INITIAL_TRANSITION_DURATION });
+        }
+
+        _showPath(segmentGenerator) {
+            let points = segmentGenerator.getPointsSet(950);
+            let pointsInter = segmentGenerator.getInterpolatedPointsSet(950);
+
+            let camera = {
+                target: points,
+                tilt: 0,
+                heading: 0
+            };
+
+            return this._view.goTo(camera).then(() => {
+                this._segmentRenderer.addPath(points);
+                this._segmentRenderer.addPath(pointsInter);
+            });
         }
 
         _runByRoute (segmentGenerator) {
@@ -66,9 +84,9 @@ define([
                 this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
                 PromiseUtils.resolve();
 
-            return promise.then(() => PromiseUtils.timeout(() => {}, frameDuration / 2))
+            return promise.then(() => PromiseUtils.timeout(null, frameDuration / 2))
                 .then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()))
-                .then(() => PromiseUtils.timeout(() => {}, frameDuration / 2));
+                .then(() => PromiseUtils.timeout(null, frameDuration / 2));
         }
 
         _showTotalScene() {

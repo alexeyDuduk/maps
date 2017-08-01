@@ -38,8 +38,9 @@ define([
             return {
                 target: _.takeRight(this._pointsCache, this._scaleSegmentsCount),
                 //center: point.slice(0, 2),
+                zoom: settings.camera.DEFAULT_ZOOM,
                 tilt: settings.camera.ROUTE_TILT,
-                heading: this._getHeading(point)
+                heading: this._getHeading(point) + 90
             };
         }
 

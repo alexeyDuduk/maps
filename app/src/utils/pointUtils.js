@@ -41,5 +41,13 @@ define([], () => {
         static randomFromRange(from, to) {
             return Math.random() * (to - from) + from;
         }
+
+        static findPointIndex(point, points) {
+            let x = point[0];
+            let y = point[1];
+            let item = ((points || []).filter(el => el[0] === x && el[1] === y) || [])[0];
+            return points.indexOf(item);
+            // return (points || []).findIndex(el => el[0] === x && el[1] === y);
+        }
     };
 });

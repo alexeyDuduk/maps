@@ -36,10 +36,12 @@ define([
             }
 
             return {
-                target: _.takeRight(this._pointsCache, this._scaleSegmentsCount),
+                // target: _.takeRight(this._pointsCache, this._scaleSegmentsCount),
+                target: this._segmentGenerator.getCameraPoints(),
                 //center: point.slice(0, 2),
                 zoom: settings.camera.DEFAULT_ZOOM,
                 tilt: settings.camera.ROUTE_TILT,
+                fov: settings.camera.FOV,
                 heading: this._getHeading(point) + 90
             };
         }

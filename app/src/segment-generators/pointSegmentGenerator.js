@@ -1,7 +1,8 @@
 define([
     'app/utils/pointUtils',
-    'app/vendor/simplify'
-], (PointUtils, simplify) => {
+    'app/vendor/simplify',
+    'app/app.settings'
+], (PointUtils, simplify, settings) => {
     'use strict';
 
     return class PointSegmentGenerator {
@@ -9,7 +10,13 @@ define([
             this._points = points;
             this._interpolatedPoints = this.getInterpolatedPointsSet(points.length);
             this._currentPoint = null;
+            this._currentIndex = -1;
             this._provider = _getIterator(points);
+            this._scaleSegmentsCount = Math.ceil(
+                settings.camera.SCALE_TARGET_POINTS_COUNT / this.getPointsCountInSegment()
+            );
+            this._pointsCountBefore = Math.ceil(this._scaleSegmentsCount * settings.camera.SCALE_TARGET_POINTS_RATIO);
+            this._pointsCountAfter = this._scaleSegmentsCount - this._pointsCountBefore;
         }
 
         getSegment() {
@@ -19,6 +26,7 @@ define([
         moveToNext() {
             let next = this._provider.next();
             this._currentPoint = next.value;
+            this._currentIndex++;
 
             return !next.done;
         }
@@ -32,8 +40,20 @@ define([
             return this._interpolatedPoints[this.getCurrentPointIndex()];
         }
 
+        getCameraPoints() {
+            let currentIndex = this.getCurrentPointIndex();
+
+            if (currentIndex - this._pointsCountBefore < 0) {
+                return this._interpolatedPoints.slice(0, this._scaleSegmentsCount);
+            } else if (currentIndex + this._pointsCountAfter > this._interpolatedPoints.length) {
+                return this._interpolatedPoints.slice(this._interpolatedPoints.length - this._scaleSegmentsCount);
+            } else {
+                return this._interpolatedPoints.slice(currentIndex - this._pointsCountBefore, currentIndex + this._pointsCountAfter);
+            }
+        }
+
         getCurrentPointIndex() {
-            return PointUtils.findPointIndex(this._currentPoint, this._points);
+            return this._currentIndex;
         }
 
         getPoints() {
@@ -53,11 +73,13 @@ define([
             let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
             let result = [];
 
-            points = simplify(points, 0.01, true);
+            points = simplify(points, settings.camera.INTERPOLATION_PRECISION, true);
             points = points.map(point => [point.x, point.y]);
 
             let filledPoints = points.reduce((result, point, index) => {
-                if (!index) return result;
+                if (!index) {
+                    return result;
+                }
                 let count = PointUtils.findPointIndex(point, originalPoints) - result.length;
                 return result.concat(PointUtils.fillWithIntermediatePoints([points[index - 1], point], count));
             }, []);

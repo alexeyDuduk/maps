@@ -17,7 +17,7 @@ define(() => {
     return {
         access: {
             server: 'https://route.arcgis.com/arcgis/rest/services',
-            token: 'XG0xPtuvUgevQyx-K6coAyomyu3g9-pve_EbIaQ1e3FvXDF461YbvHkwNkSrOsD2goMu3aUbRphnfwgZGi5-zx8EP2PANCAptyU3T7H7Vrr0NHDU3paKh-X-swpAm3B2MWR2Qs1prcq2fdwvVFcvpA..'
+            token: 'qneblpbGV7Jft8R0djE2Z4JJI6inHixhcVRIJMGwQOe3g_VfQUHeGSBr5uLi9M1lLIMIAUghEs09_h2uI7ZBc1ECLh72vpznH-fhI17q13ByvCteRFTCP5MkrIqYk6UpKTAPJWJDGXLwuJWA3SLV3A..'
         },
         locations: {
             PICKUP: 'PICKUP',
@@ -25,20 +25,23 @@ define(() => {
             INTERMEDIATE: 'INTERMEDIATE'
         },
         camera: {
-            DEFAULT_ZOOM: 14,
+            DEFAULT_ZOOM: 11,
             INITIAL_TILT: 0,
-            ROUTE_TILT: 60,
+            ROUTE_TILT: 45,
             TOTAL_VIEW_TILT: 30,
+            FOV: 55,
             HEADING_TARGET_POINTS_COUNT: 50,
-            SCALE_TARGET_POINTS_COUNT: 30,
+            SCALE_TARGET_POINTS_COUNT: 60,
+            SCALE_TARGET_POINTS_RATIO: 0.4,
             POINTS_COUNT_PER_CAMERA_POSITION: 1,
             SPEED_FACTOR: 4,
             INITIAL_TRANSITION_DURATION: 8000,
             FRAME_DURATION: 200,
-            TOTAL_VIEW_TRANSITION_DURATION: 12000
+            TOTAL_VIEW_TRANSITION_DURATION: 12000,
+            INTERPOLATION_PRECISION: 0.05
         },
         route: {
-            MAX_POINTS_COUNT: 1000
+            MAX_POINTS_COUNT: 500
         },
         colors: {
             BRAND_PRIMARY: brandPrimaryColor,
@@ -51,7 +54,7 @@ define(() => {
         },
         routeBuilder: {
             URL: 'https://route.arcgis.com/arcgis/rest/services/World/Route/NAServer/Route_World',
-            MAX_POINTS_COUNT: 150,  // api limitation
+            MAX_POINTS_COUNT: 140,  // api limitation
             POINTS_PERCENT_TO_PROCESS: 50,
             MIN_POINTS_COUNT: 2
         },

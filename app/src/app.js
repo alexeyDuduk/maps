@@ -64,7 +64,7 @@ define([
             //let originalDataProvider = new HyderabadDataProvider();
             //let originalDataProvider = new MinskDataProvider();
             //let originalDataProvider = new GpsiesDataProvider('bayreuth-10k');
-            let originalDataProvider = new ProdDataProvider('prod-4');
+            let originalDataProvider = new ProdDataProvider('prod-5');
             originalDataProvider = new CachingDataProviderWrapper(originalDataProvider);
             let dataProvider = new RouteTaskDataProviderWrapper(originalDataProvider);
 
@@ -100,7 +100,7 @@ define([
                             material: {
                                 color: settings.colors.BRAND_PRIMARY
                             },
-                            size: 4
+                            size: 6
                         })
                     ]
                 });
@@ -130,15 +130,23 @@ define([
                 })
                     .then(() => PromiseUtils.timeout(() => {}, 1000))
                     .then(() => routeRenderer.draw(segmentGenerator))
-                    .then(() => { console.log('phantom:finish'); console.timeEnd('rendering'); })
-                    .otherwise(() => console.log('view.otherwise'));
+                    .then(() => {
+                        console.timeEnd('rendering');
+                        PromiseUtils.timeout(() => {
+                            console.log('phantom:finish');
+                        }, 5000); 
+                    })
+                    .otherwise((err) => {
+                        console.log('phantom:finish');
+                        console.log('view.otherwise', err);
+                    });
             });
         }
 
         _createRouteSegmentGenerator (points) {
-            let step = Math.floor(points.length / settings.route.MAX_POINTS_COUNT);
-
-            return step ? new PathSegmentGenerator(points, step) : new PointSegmentGenerator(points);
+            return new PointSegmentGenerator(points);
+            // let step = Math.floor(points.length / settings.route.MAX_POINTS_COUNT);
+            // return step ? new PathSegmentGenerator(points, step) : new PointSegmentGenerator(points);
         }
 
         _convertPointsToFeatures (points) {

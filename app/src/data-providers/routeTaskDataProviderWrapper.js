@@ -5,8 +5,9 @@ define([
     'esri/tasks/support/RouteParameters',
     'esri/tasks/support/FeatureSet',
     'app/app.settings',
-    'app/data-providers/baseDataProvider'
-], (Graphic, Point, RouteTask, RouteParameters, FeatureSet, appSettings, BaseDataProvider) => {
+    'app/data-providers/baseDataProvider',
+    'app/utils/promiseUtils'
+], (Graphic, Point, RouteTask, RouteParameters, FeatureSet, appSettings, BaseDataProvider, PromiseUtils) => {
     'use strict';
 
     const settings = appSettings.routeBuilder;
@@ -18,7 +19,17 @@ define([
         }
 
         getPoints() {
-            return this._dataProvider.getPoints()
+            return this._dataProvider.getPoints().then(points => {
+                if (points.length >= settings.MAX_POINTS_COUNT) {
+                    return points;
+                } else {
+                    return this.filterAndBuildRoute(points);
+                }
+            });
+        }
+
+        filterAndBuildRoute(points) {
+            return PromiseUtils.resolve(points)
                 .then(RouteTaskDataProviderWrapper._filterPoints)
                 .then(RouteTaskDataProviderWrapper._buildRoute)
                 .then((response) => _.flatten(response.routeResults[0].route.geometry.paths));

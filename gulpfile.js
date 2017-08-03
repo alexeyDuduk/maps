@@ -3,7 +3,8 @@
     'use strict';
 
     var jsFiles         = [ 'app/*.index.js', 'app/**/*.index.js', 'app/*.js', 'app/**/*.js' ];
-    var jsVendors       = [];
+    var jsVendor        = [];
+    var jsVendorExcl    = [ '!app/**/vendor/**/*.js' ];
     var stylesFiles     = 'app/**/*.scss';
     var stylesVendors   = [ ];
 
@@ -61,7 +62,7 @@
         });
 
         gulp.task('lint', function () {
-            gulp.src(jsFiles)
+            gulp.src([...jsFiles, ...jsVendorExcl])
                 .pipe(jshint('.jshintrc'))
                 .pipe(jshint.reporter('jshint-stylish'))
                 .pipe(jshint.reporter('fail'))
@@ -105,7 +106,7 @@
         });
 
         gulp.task('build-vendor-scripts', function () {
-            return gulp.src(jsVendors)
+            return gulp.src(jsVendor)
                 .pipe(concat('libs.min.js'))
                 .pipe(gulp.dest('dist/scripts'));
         });
@@ -148,7 +149,7 @@
     }
 
     function registerCompositeTasks() {
-        gulp.task('default', [ 'lint', 'build', 'watch', 'browser-sync' ]);
+        gulp.task('default', [ 'lint', 'build', 'watch' ], () => gulp.start('browser-sync'));
     }
 
     registerInitEnvTasks();

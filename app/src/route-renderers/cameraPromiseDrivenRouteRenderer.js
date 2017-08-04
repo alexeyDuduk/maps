@@ -1,7 +1,8 @@
 define([
     'app/app.settings',
-    'app/utils/promiseUtils'
-], (appSettings, PromiseUtils) => {
+    'app/utils/promiseUtils',
+    'esri/core/watchUtils'
+], (appSettings, PromiseUtils, watchUtils) => {
     'use strict';
 
     const settings = appSettings.camera;
@@ -84,9 +85,8 @@ define([
                 this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
                 PromiseUtils.resolve();
 
-            return promise.then(() => PromiseUtils.timeout(null, frameDuration / 2))
-                .then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()))
-                .then(() => PromiseUtils.timeout(null, frameDuration / 2));
+            return promise
+                .then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()));
         }
 
         _showTotalScene() {

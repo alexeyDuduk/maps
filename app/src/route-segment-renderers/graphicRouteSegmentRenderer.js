@@ -8,7 +8,8 @@ define([
     'esri/layers/GraphicsLayer',
     'esri/layers/FeatureLayer',
     'esri/renderers/SimpleRenderer',
-    'app/app.settings'
+    'app/app.settings',
+    'app/route-segment-renderers/baseEsriRouteSegmentRenderer'
 ], (Graphic,
     Point,
     Polyline,
@@ -18,14 +19,16 @@ define([
     GraphicsLayer,
     FeatureLayer,
     SimpleRenderer,
-    appSettings
+    appSettings,
+    BaseEsriRouteSegmentRenderer
 ) => {
     'use strict';
 
     const colors = appSettings.colors;
 
-    return class GraphicRouteSegmentRenderer {
-        constructor (map, lineSymbol, lineAtt) {
+    return class GraphicRouteSegmentRenderer extends BaseEsriRouteSegmentRenderer {
+        constructor (map, view, lineSymbol, lineAtt) {
+            super(view);
             this._lineSymbol = lineSymbol;
             this._lineAtt = lineAtt;
             this._lastPath = null;
@@ -61,6 +64,8 @@ define([
             let path = this._lastPath ? [_.last(this._lastPath), point] : [point];
 
             this._addPath(path);
+
+            return super.addPoint(point);
         }
 
         addPath (points) {
@@ -70,6 +75,8 @@ define([
             this._moveCurrentPoint(points);
 
             this._addPath(points);
+
+            return super.addPath(points);
         }
 
         _moveCurrentPoint (points) {

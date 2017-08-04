@@ -111,7 +111,7 @@ define([
                     Length: '3,456 km'
                 };
 
-                let segmentRenderer = new GraphicRouteSegmentRenderer(map, lineSymbol, lineAtt);
+                let segmentRenderer = new GraphicRouteSegmentRenderer(map, view, lineSymbol, lineAtt);
                 //let segmentRenderer = new PolyRouteSegmentRenderer(view, lineSymbol, lineAtt);
 
                 let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);

@@ -90,7 +90,6 @@ define([
                          points = [],
                          locations = []
                      ]) => {
-                points = points.slice(0, 20);
                 points = PointUtils.fillWithIntermediatePoints(points, 2);
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
                 let cameraProvider = new CameraProvider(segmentGenerator);

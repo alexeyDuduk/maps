@@ -23,7 +23,8 @@ define([
     'app/segment-generators/pathSegmentGenerator',
     'app/segment-generators/pointSegmentGenerator',
     'app/utils/promiseUtils',
-    'app/utils/pointUtils'
+    'app/utils/pointUtils',
+    'app/utils/eventManager'
 ], (Map,
     MapView,
     SceneView,
@@ -48,7 +49,8 @@ define([
     PathSegmentGenerator,
     PointSegmentGenerator,
     PromiseUtils,
-    PointUtils
+    PointUtils,
+    eventManager
 ) => {
     'use strict';
 
@@ -57,11 +59,20 @@ define([
             return PromiseUtils.timeout(() => this.init(), 300);
         }
 
+        initWatchers () {
+            eventManager.on('view:render:start',    () => console.log('phantom:start'));
+            eventManager.on('view:update:end',      () => console.log('phantom:render'));
+            eventManager.on('view:render:end',      () => console.log('phantom:end'));
+            eventManager.on('view:error',           () => console.log('phantom:end'));
+        }
+
         init () {
             IdentityManager.registerToken({
                 server: settings.access.server,
                 token: settings.access.token
             });
+
+            this.initWatchers();
 
             //let originalDataProvider = new HyderabadDataProvider();
             //let originalDataProvider = new MinskDataProvider();
@@ -79,6 +90,7 @@ define([
                          points = [],
                          locations = []
                      ]) => {
+                points = points.slice(0, 20);
                 points = PointUtils.fillWithIntermediatePoints(points, 2);
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
                 let cameraProvider = new CameraProvider(segmentGenerator);
@@ -134,7 +146,7 @@ define([
                     .then(() => routeRenderer.draw(segmentGenerator))
                     .then(() => this._stopRendering())
                     .otherwise((err) => {
-                        console.log('phantom:finish');
+                        eventManager.emit('view:error');
                         console.log('view.otherwise', err);
                     });
             });
@@ -154,19 +166,15 @@ define([
         }
 
         _startRendering () {
-            console.log('phantom:start');
+            eventManager.emit('view:render:start');
             console.time('rendering');
         }
 
         _stopRendering () {
             console.timeEnd('rendering');
             PromiseUtils.timeout(() => {
-                console.log('phantom:finish');
+                eventManager.emit('view:render:end');
             }, 5000);
-        }
-
-        _sendRender () {
-            console.log('phantom:render');
         }
     };
 });

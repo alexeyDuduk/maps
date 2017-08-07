@@ -29,7 +29,7 @@ var onConsoleMessage = function (message) {
             // screenshot(3000);
             // console.log(message);
             break;
-        case 'phantom:finish':
+        case 'phantom:end':
             rendering = false;
             phantom.exit();
             break;

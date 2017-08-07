@@ -22,7 +22,8 @@ define([
 
             return watchUtils.whenOnce(this._view, 'updating')
                 .then(() => watchUtils.whenFalseOnce(this._view, 'updating'))
-                .then(() => new Date() - startTime);
+                .then(() => new Date() - startTime)
+                .then(() => console.log('phantom:render'));
         }
     };
 });

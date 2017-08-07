@@ -1,5 +1,7 @@
 var page = require('webpage').create();
 
+var rendering = false;
+
 var startRender = function (interval) {
     setInterval(function() {
         page.render('/dev/stdout', { format: "png" });
@@ -13,15 +15,26 @@ var screenshot = function (delay) {
     }, delay);
 };
 
+var render = function () {
+    if (rendering) {
+        page.render('/dev/stdout', { format: "png" });
+    }
+};
+
 var onConsoleMessage = function (message) {
     switch (message) {
         case 'phantom:start':
-            startRender(400);
+            rendering = true;
+            // startRender(200);
             // screenshot(3000);
             // console.log(message);
             break;
         case 'phantom:finish':
+            rendering = false;
             phantom.exit();
+            break;
+        case 'phantom:render':
+            render();
             break;
         default:
             // console.log(message);

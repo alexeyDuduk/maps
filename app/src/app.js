@@ -22,7 +22,8 @@ define([
     'app/features-renderers/featureRenderer',
     'app/segment-generators/pathSegmentGenerator',
     'app/segment-generators/pointSegmentGenerator',
-    'app/utils/promiseUtils'
+    'app/utils/promiseUtils',
+    'app/utils/pointUtils'
 ], (Map,
     MapView,
     SceneView,
@@ -46,7 +47,8 @@ define([
     FeatureRenderer,
     PathSegmentGenerator,
     PointSegmentGenerator,
-    PromiseUtils
+    PromiseUtils,
+    PointUtils
 ) => {
     'use strict';
 
@@ -77,6 +79,7 @@ define([
                          points = [],
                          locations = []
                      ]) => {
+                points = PointUtils.fillWithIntermediatePoints(points, 2);
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
                 let cameraProvider = new CameraProvider(segmentGenerator);
 
@@ -122,20 +125,14 @@ define([
                 let originalLuFeatures = this._convertPointsToFeatures(originalPoints);
 
                 view.then(() => {
-                    console.log('phantom:start');
-                    console.time('rendering');
+                    this._startRendering();
 
                     featureRenderer.draw(locations);
                     // luFeatureRenderer.draw(originalLuFeatures);
                 })
                     .then(() => PromiseUtils.timeout(() => {}, 1000))
                     .then(() => routeRenderer.draw(segmentGenerator))
-                    .then(() => {
-                        console.timeEnd('rendering');
-                        PromiseUtils.timeout(() => {
-                            console.log('phantom:finish');
-                        }, 5000); 
-                    })
+                    .then(() => this._stopRendering())
                     .otherwise((err) => {
                         console.log('phantom:finish');
                         console.log('view.otherwise', err);
@@ -145,8 +142,6 @@ define([
 
         _createRouteSegmentGenerator (points) {
             return new PointSegmentGenerator(points);
-            // let step = Math.floor(points.length / settings.route.MAX_POINTS_COUNT);
-            // return step ? new PathSegmentGenerator(points, step) : new PointSegmentGenerator(points);
         }
 
         _convertPointsToFeatures (points) {
@@ -156,6 +151,22 @@ define([
                     id: index
                 })
             );
+        }
+
+        _startRendering () {
+            console.log('phantom:start');
+            console.time('rendering');
+        }
+
+        _stopRendering () {
+            console.timeEnd('rendering');
+            PromiseUtils.timeout(() => {
+                console.log('phantom:finish');
+            }, 5000);
+        }
+
+        _sendRender () {
+            console.log('phantom:render');
         }
     };
 });

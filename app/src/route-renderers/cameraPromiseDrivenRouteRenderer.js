@@ -77,6 +77,7 @@ define([
         _goToNext(segmentGenerator, frameDuration) {
             let options = {
                 easing: 'linear',
+                animate: false,
                 //duration: frameDuration/2
                 speedFactor: settings.SPEED_FACTOR
             };

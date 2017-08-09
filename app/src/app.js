@@ -8,17 +8,12 @@ define([
     'esri/symbols/LineSymbol3DLayer',
     'esri/identity/IdentityManager',
     'app/app.settings',
-    'app/data-providers/hyderabadDataProvider',
-    'app/data-providers/minskDataProvider',
-    'app/data-providers/gpsiesDataProvider',
-    'app/data-providers/prodDataProvider',
+    'app/data-providers/locationUpdatesDataProvider',
     'app/data-providers/cachingDataProviderWrapper',
     'app/data-providers/routeTaskDataProviderWrapper',
     'app/camera/cameraProvider',
     'app/route-segment-renderers/graphicRouteSegmentRenderer',
-    'app/route-segment-renderers/polyRouteSegmentRenderer',
     'app/route-renderers/cameraPromiseDrivenRouteRenderer',
-    'app/route-renderers/timeoutDrivenRouteRenderer',
     'app/features-renderers/featureRenderer',
     'app/segment-generators/pathSegmentGenerator',
     'app/segment-generators/pointSegmentGenerator',
@@ -34,17 +29,12 @@ define([
     LineSymbol3DLayer,
     IdentityManager,
     settings,
-    HyderabadDataProvider,
-    MinskDataProvider,
-    GpsiesDataProvider,
-    ProdDataProvider,
+    LocationUpdatesDataProvider,
     CachingDataProviderWrapper,
     RouteTaskDataProviderWrapper,
     CameraProvider,
     GraphicRouteSegmentRenderer,
-    PolyRouteSegmentRenderer,
     CameraPromiseDrivenRouteRenderer,
-    TimeoutDrivenRouteRenderer,
     FeatureRenderer,
     PathSegmentGenerator,
     PointSegmentGenerator,
@@ -66,6 +56,16 @@ define([
             eventManager.on('view:error',           () => console.log('phantom:end'));
         }
 
+        getShipmentId () {
+            let id = '1';
+            let search = window.location.search;
+            if (search) {
+                let params = new URLSearchParams(search.substring(1));
+                id = params.get('id') || id;
+            }
+            return id;
+        }
+
         init () {
             IdentityManager.registerToken({
                 server: settings.access.server,
@@ -74,10 +74,7 @@ define([
 
             this.initWatchers();
 
-            //let originalDataProvider = new HyderabadDataProvider();
-            //let originalDataProvider = new MinskDataProvider();
-            //let originalDataProvider = new GpsiesDataProvider('bayreuth-10k');
-            let originalDataProvider = new ProdDataProvider('prod-5');
+            let originalDataProvider = new LocationUpdatesDataProvider(`prod-${this.getShipmentId()}`);
             originalDataProvider = new CachingDataProviderWrapper(originalDataProvider);
             let dataProvider = new RouteTaskDataProviderWrapper(originalDataProvider);
 
@@ -89,8 +86,8 @@ define([
                          originalPoints = [],
                          points = [],
                          locations = []
-                     ]) => {
-                points = PointUtils.fillWithIntermediatePoints(points, 2);
+            ]) => {
+
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
                 let cameraProvider = new CameraProvider(segmentGenerator);
 
@@ -126,10 +123,8 @@ define([
                 };
 
                 let segmentRenderer = new GraphicRouteSegmentRenderer(map, view, lineSymbol, lineAtt);
-                //let segmentRenderer = new PolyRouteSegmentRenderer(view, lineSymbol, lineAtt);
 
                 let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
-                //let routeRenderer = new TimeoutDrivenRouteRenderer(segmentRenderer);
 
                 let featureRenderer = new FeatureRenderer(map, [settings.locations.PICKUP, settings.locations.DELIVERY]);
                 let luFeatureRenderer = new FeatureRenderer(map, [settings.locations.INTERMEDIATE]);    // real location updates points

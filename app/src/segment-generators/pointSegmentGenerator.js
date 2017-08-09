@@ -15,7 +15,9 @@ define([
             this._scaleSegmentsCount = Math.ceil(
                 settings.camera.SCALE_TARGET_POINTS_COUNT / this.getPointsCountInSegment()
             );
-            this._pointsCountBefore = Math.ceil(this._scaleSegmentsCount * settings.camera.SCALE_TARGET_POINTS_RATIO);
+            this._pointsCountBefore = Math.ceil(
+                this._scaleSegmentsCount * settings.camera.SCALE_TARGET_POINTS_RATIO
+            );
             this._pointsCountAfter = this._scaleSegmentsCount - this._pointsCountBefore;
         }
 
@@ -36,10 +38,15 @@ define([
         }
 
         getCurrentPoint() {
-            // return this._currentPoint;
+            return this._currentPoint;
+        }
+
+        getCurrentInterpolatedPoint() {
             return this._interpolatedPoints[this.getCurrentPointIndex()];
         }
 
+        // return array of interpolated points with a center
+        // defined in the SCALE_TARGET_POINTS_RATIO parameter
         getCameraPoints() {
             let currentIndex = this.getCurrentPointIndex();
 
@@ -68,10 +75,14 @@ define([
             return this._points.slice(0, count);
         }
 
+        // return array of points for interpolated route
+        // get array of points for interpolated route from 'simplify'
+        // find common points
+        // split interpolated path on the same number of points as original path
+        // TODO: review the possibility of duplicated points, indexes can be incorrect in this case
         getInterpolatedPointsSet(count) {
             let originalPoints = this._points.slice(0, count);
             let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
-            let result = [];
 
             points = simplify(points, settings.camera.INTERPOLATION_PRECISION, true);
             points = points.map(point => [point.x, point.y]);

@@ -17,7 +17,7 @@ define(() => {
     return {
         access: {
             server: 'https://route.arcgis.com/arcgis/rest/services',
-            token: 'qneblpbGV7Jft8R0djE2Z4JJI6inHixhcVRIJMGwQOe3g_VfQUHeGSBr5uLi9M1lLIMIAUghEs09_h2uI7ZBc1ECLh72vpznH-fhI17q13ByvCteRFTCP5MkrIqYk6UpKTAPJWJDGXLwuJWA3SLV3A..'
+            token: 'qAm4OlY9aeAbEDR4tjnSsrQ5OxEahxTVREWxLbdLgwXNzv62aSJdCp6n0qpBmYQLB4mHii7_UztfDw4QVolHKYKmMcS-2A6VbG80jckFjHwfb94zxwluFZhjyu7Zx8zfzdXfrmmNQxWMs14NSwhyVw..'
         },
         locations: {
             PICKUP: 'PICKUP',
@@ -25,20 +25,21 @@ define(() => {
             INTERMEDIATE: 'INTERMEDIATE'
         },
         camera: {
+            // position
             DEFAULT_ZOOM: 11,
             INITIAL_TILT: 0,
-            ROUTE_TILT: 45,
+            ROUTE_TILT: 55,
             TOTAL_VIEW_TILT: 30,
             FOV: 55,
+            // points grouping
             HEADING_TARGET_POINTS_COUNT: 50,
             SCALE_TARGET_POINTS_COUNT: 60,
             SCALE_TARGET_POINTS_RATIO: 0.4,
             POINTS_COUNT_PER_CAMERA_POSITION: 1,
-            SPEED_FACTOR: 1,
+            INTERPOLATION_PRECISION: 0.05,
+            // animation duration
             INITIAL_TRANSITION_DURATION: 800,
-            FRAME_DURATION: 200,
-            TOTAL_VIEW_TRANSITION_DURATION: 1200,
-            INTERPOLATION_PRECISION: 0.05
+            TOTAL_VIEW_TRANSITION_DURATION: 1200
         },
         route: {
             MAX_POINTS_COUNT: 500
@@ -81,6 +82,6 @@ define(() => {
     };
 
     function _assetsPrefixed(path) {
-        return ASSETS_PATH + path;
+        return `${ASSETS_PATH}${path}`;
     }
 });

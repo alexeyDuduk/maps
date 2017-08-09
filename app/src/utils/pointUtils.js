@@ -45,9 +45,32 @@ define([], () => {
         static findPointIndex(point, points) {
             let x = point[0];
             let y = point[1];
-            let item = ((points || []).filter(el => el[0] === x && el[1] === y) || [])[0];
-            return points.indexOf(item);
-            // return (points || []).findIndex(el => el[0] === x && el[1] === y);
+            let comparator = el => el[0] === x && el[1] === y;
+
+            if (Array.prototype.findIndex) {
+                return (points || []).findIndex(comparator);
+            } else {
+                let item = ((points || []).filter(comparator) || [])[0];
+                return points.indexOf(item);
+            }
+        }
+
+        static getPathLength (points) {
+            let prevPoint;
+            let result = points.reduce((total, point, index) => {
+                if (index === 0) {
+                    return total;
+                }
+                prevPoint = points[index - 1];
+                let x1 = prevPoint[0],
+                    y1 = prevPoint[1],
+                    x2 = point[0],
+                    y2 = point[1];
+
+                return total + (Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)) || 0);
+            }, 0);
+
+            return result;
         }
     };
 });

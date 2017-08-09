@@ -19,8 +19,6 @@ define([
         draw(segmentGenerator) {
             this._beforeDraw(segmentGenerator);
 
-            // return this._showPath(segmentGenerator);
-
             return this._moveToInitialScene()
                 .then(() => this._runIntro(segmentGenerator))
                 .then(() => this._runByRoute(segmentGenerator))
@@ -44,6 +42,7 @@ define([
             return this._view.goTo(camera, { duration: settings.INITIAL_TRANSITION_DURATION });
         }
 
+        // displays original and interpolated route for testing
         _showPath(segmentGenerator) {
             let points = segmentGenerator.getPointsSet(950);
             let pointsInter = segmentGenerator.getInterpolatedPointsSet(950);
@@ -68,26 +67,29 @@ define([
                     PromiseUtils.resolve();
 
             goToNext = () =>
-                this._goToNext(segmentGenerator, settings.FRAME_DURATION)
+                this._goToNext(segmentGenerator)
                     .then(tryGoToNextSegment);
 
             return tryGoToNextSegment();
         }
 
-        _goToNext(segmentGenerator, frameDuration) {
+        _goToNext(segmentGenerator) {
             let options = {
-                easing: 'linear',
-                animate: false,
-                //duration: frameDuration/2
-                speedFactor: settings.SPEED_FACTOR
+                animate: false
             };
 
-            let promise = (++this._index) % this._segmentsPerCameraPosition === 0 ?
-                this._view.goTo(this._cameraProvider.getCamera(segmentGenerator.getCurrentPoint()), options) :
-                PromiseUtils.resolve();
+            let promise;
 
-            return promise
-                .then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()));
+            if ((++this._index) % this._segmentsPerCameraPosition === 0) {
+                promise = this._view.goTo(
+                    this._cameraProvider.getCamera(segmentGenerator.getCurrentInterpolatedPoint()),
+                    options
+                );
+            } else {
+                promise = PromiseUtils.resolve();
+            }
+
+            return promise.then(() => this._segmentRenderer.addPath(segmentGenerator.getSegment()));
         }
 
         _showTotalScene() {

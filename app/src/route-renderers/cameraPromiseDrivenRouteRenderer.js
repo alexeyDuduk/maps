@@ -34,12 +34,10 @@ define([
         }
 
         _moveToInitialScene() {
-            console.log('_moveToInitialScene');
             return this._view.goTo(this._cameraProvider.getInitialCamera());
         }
 
         _runIntro(segmentGenerator) {
-            console.log('_runIntro');
             let point = segmentGenerator.getInitialPoint();
             let camera = this._cameraProvider.getCamera(point);
 
@@ -49,7 +47,7 @@ define([
         // displays original and interpolated route for testing
         _showPath(segmentGenerator) {
             let points = segmentGenerator.getPointsSet(950);
-            let pointsInter = segmentGenerator.getInterpolatedPointsSet(950);
+            let pointsInter = this._cameraProvider.getInterpolatedPointsSet(950);
 
             let camera = {
                 target: points,
@@ -87,7 +85,7 @@ define([
 
             if ((++this._index) % this._segmentsPerCameraPosition === 0) {
                 promise = this._view.goTo(
-                    this._cameraProvider.getCamera(segmentGenerator.getCurrentInterpolatedPoint()),
+                    this._cameraProvider.getCamera(),
                     options
                 );
             } else {

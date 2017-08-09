@@ -1,21 +1,19 @@
 define([
-    'app/app.settings'
-], (settings) => {
+    'app/vendor/simplify',
+    'app/app.settings',
+    'app/utils/pointUtils',
+    'app/camera/baseHeadingStrategy',
+], (simplify, settings, PointUtils, BaseHeadingStrategy) => {
     'use strict';
 
     return class CameraProvider {
         constructor(segmentGenerator, specialPoints) {
+            // TODO
+            this._headingStrategy = new BaseHeadingStrategy(segmentGenerator);
             this._segmentGenerator = segmentGenerator;
-            this._latSum = 0;
-            this._lngSum = 0;
-            this._count = 0;
-            // TODO:
-            this._segmentsToRemember = Math.ceil(
-                settings.camera.HEADING_TARGET_POINTS_COUNT / segmentGenerator.getPointsCountInSegment()
-            );
-            this._scaleSegmentsCount = Math.ceil(
-                settings.camera.SCALE_TARGET_POINTS_COUNT / segmentGenerator.getPointsCountInSegment()
-            );
+
+            this._initCoefficients();
+            this._interpolatedPoints = this.getInterpolatedPointsSet();
 
             this._epsilon = 0.3;
             this._specialPoints = this._getSpecialPoints(specialPoints);
@@ -23,7 +21,18 @@ define([
             this._prevPoint = null;
             this._nextPoint = null;
 
+
             this._initZoom();
+        }
+
+        _initCoefficients() {
+            this._scaleSegmentsCount = Math.ceil(
+                settings.camera.SCALE_TARGET_POINTS_COUNT / this._segmentGenerator.getPointsCountInSegment()
+            );
+            this._pointsCountBefore = Math.ceil(
+                this._scaleSegmentsCount * settings.camera.SCALE_TARGET_POINTS_RATIO
+            );
+            this._pointsCountAfter = this._scaleSegmentsCount - this._pointsCountBefore;
         }
 
         getInitialCamera() {
@@ -33,17 +42,20 @@ define([
                 center: point,
                 zoom: this._getZoomLevel(point),
                 tilt: settings.camera.INITIAL_TILT,
-                heading: this._getHeading(point)
+                heading: this._headingStrategy.getInitialHeading(point)
             };
         }
 
-        getCamera(point) {
+        getCamera() {
+            let point = this._interpolatedPoints[this._segmentGenerator.getCurrentPointIndex() + this._pointsCountBefore];
+            this._headingStrategy.update(point);
+
             return {
-                target: this._segmentGenerator.getCameraPoints(),
+                target: point,
                 zoom: this._getZoomLevel(point),
                 tilt: settings.camera.ROUTE_TILT,
                 fov: settings.camera.FOV,
-                heading: this._getHeading(point) + 90
+                heading: this._headingStrategy.getRouteHeading(point)
             };
         }
 
@@ -52,24 +64,6 @@ define([
                 target: this._segmentGenerator.getPoints(),
                 tilt: settings.camera.TOTAL_VIEW_TILT
             };
-        }
-
-        _getHeading(point) {
-            let averagePoint = [ this._latSum / this._count, this._lngSum / this._count ];
-            let heading = 0;
-            if (this._count > 2) {
-                let dy = averagePoint[1] - point[1];
-                let dx = averagePoint[0] - point[0];
-                let tg = dx / dy;
-                heading = Math.atan(tg) * 180 / Math.PI;
-                if (dy < 0) {
-                    heading += 180;
-                } else if (dx < 0) {
-                    heading += 360;
-                }
-            }
-
-            return heading;
         }
 
         _getSpecialPoints(points) {
@@ -123,11 +117,57 @@ define([
             return maxZoom + ratio / this._epsilon * (minZoom - maxZoom);
         }
 
+        // TODO: utils
         _getDistance(point1, point2) {
             return Math.sqrt(
                 Math.pow(point1[0] - point2[0], 2) +
                 Math.pow(point1[1] - point2[1], 2)
             );
+        }
+
+        // return array of points for interpolated route
+        // get array of points for interpolated route from 'simplify'
+        // find common points
+        // split interpolated path on the same number of points as original path
+        // TODO: review the possibility of duplicated points, indexes can be incorrect in this case
+        // TODO: camera specific logic
+        getInterpolatedPointsSet(count) {
+            let originalPoints = this._mapWithBufferPoints(
+                this._segmentGenerator.getPoints().slice(0, count)
+            );
+            let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
+
+            points = simplify(points, settings.camera.INTERPOLATION_PRECISION, true);
+            points = points.map(point => [point.x, point.y]);
+
+            let filledPoints = points.reduce((result, point, index) => {
+                if (!index) {
+                    return result;
+                }
+                let count = PointUtils.findPointIndex(point, originalPoints) - result.length;
+                return result.concat(PointUtils.fillWithIntermediatePoints([points[index - 1], point], count));
+            }, []);
+
+            return filledPoints;
+        }
+
+        _mapWithBufferPoints(points) {
+            // Add 2 buffers of points: before the first and after the last
+            return _.concat(
+                this._reflectPoints(points.slice(0, this._pointsCountBefore), _.first(points)),
+                points,
+                this._reflectPoints(points.slice(-this._pointsCountAfter), _.last(points))
+            );
+        }
+
+        _reflectPoints(points, origin) {
+            return _.chain(points)
+                .map((point) => [
+                    2 * origin[0] - point[0],
+                    2 * origin[1] - point[1]
+                ])
+                .value()
+                .reverse();
         }
     };
 });

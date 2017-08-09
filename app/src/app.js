@@ -81,7 +81,7 @@ define([
             PromiseUtils.whenAll([
                 originalDataProvider.getPoints(),
                 dataProvider.getPoints(),
-                // dataProvider.getLocations()
+                dataProvider.getLocations()
             ]).then(([
                          originalPoints = [],
                          points = [],
@@ -89,7 +89,7 @@ define([
             ]) => {
 
                 let segmentGenerator = this._createRouteSegmentGenerator(points);
-                let cameraProvider = new CameraProvider(segmentGenerator);
+                let cameraProvider = new CameraProvider(segmentGenerator, locations);
 
                 let map = new Map({
                     basemap: 'hybrid',
@@ -123,6 +123,16 @@ define([
                 };
 
                 let segmentRenderer = new GraphicRouteSegmentRenderer(map, view, lineSymbol, lineAtt);
+                let debugRenderer = new GraphicRouteSegmentRenderer(map, view, new LineSymbol3D({
+                    symbolLayers: [
+                        new LineSymbol3DLayer({
+                            material: {
+                                color: 'red'
+                            },
+                            size: 6
+                        })
+                    ]
+                }), lineAtt);
 
                 let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
 
@@ -140,8 +150,8 @@ define([
                     .then(() => routeRenderer.draw(segmentGenerator))
                     .then(() => this._stopRendering())
                     .otherwise((err) => {
-                        eventManager.emit('view:error');
                         console.log('view.otherwise', err);
+                        eventManager.emit('view:error');
                     });
             });
         }

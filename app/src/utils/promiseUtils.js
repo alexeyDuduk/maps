@@ -12,6 +12,7 @@ define([
                     let result = func ? func() : null;
                     deferred.resolve(result);
                 } catch (e) {
+                    console.error(e);
                     deferred.reject(e);
                 } finally {
                     clearTimeout(timeoutId);

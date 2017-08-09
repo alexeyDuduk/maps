@@ -8,10 +8,14 @@ define([
     return class PointSegmentGenerator {
         constructor(points) {
             this._points = points;
+            this._provider = _getIterator(points);
+            this._initCoefficients();
             this._interpolatedPoints = this.getInterpolatedPointsSet(points.length);
             this._currentPoint = null;
-            this._currentIndex = -1;
-            this._provider = _getIterator(points);
+            this._currentIndex = 0;
+        }
+
+        _initCoefficients() {
             this._scaleSegmentsCount = Math.ceil(
                 settings.camera.SCALE_TARGET_POINTS_COUNT / this.getPointsCountInSegment()
             );
@@ -42,21 +46,21 @@ define([
         }
 
         getCurrentInterpolatedPoint() {
-            return this._interpolatedPoints[this.getCurrentPointIndex()];
+            // returns interpolated point
+            // offset by initial buffer length
+            return this._interpolatedPoints[this._pointsCountBefore + this.getCurrentPointIndex()];
         }
 
         // return array of interpolated points with a center
         // defined in the SCALE_TARGET_POINTS_RATIO parameter
         getCameraPoints() {
+            return [this.getCurrentPoint()];
             let currentIndex = this.getCurrentPointIndex();
 
-            if (currentIndex - this._pointsCountBefore < 0) {
-                return this._interpolatedPoints.slice(0, this._scaleSegmentsCount);
-            } else if (currentIndex + this._pointsCountAfter > this._interpolatedPoints.length) {
-                return this._interpolatedPoints.slice(this._interpolatedPoints.length - this._scaleSegmentsCount);
-            } else {
-                return this._interpolatedPoints.slice(currentIndex - this._pointsCountBefore, currentIndex + this._pointsCountAfter);
-            }
+            return this._interpolatedPoints.slice(
+                currentIndex,
+                currentIndex + this._scaleSegmentsCount
+            );
         }
 
         getCurrentPointIndex() {
@@ -80,8 +84,10 @@ define([
         // find common points
         // split interpolated path on the same number of points as original path
         // TODO: review the possibility of duplicated points, indexes can be incorrect in this case
+
+        // TODO: camera specific logic
         getInterpolatedPointsSet(count) {
-            let originalPoints = this._points.slice(0, count);
+            let originalPoints = this._mapWithBufferPoints(this._points.slice(0, count));
             let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
 
             points = simplify(points, settings.camera.INTERPOLATION_PRECISION, true);
@@ -96,6 +102,25 @@ define([
             }, []);
 
             return filledPoints;
+        }
+
+        _mapWithBufferPoints(points) {
+            // Add 2 buffers of points: before the first and after the last
+            return _.concat(
+                this._reflectPoints(points.slice(0, this._pointsCountBefore), _.first(points)),
+                points,
+                this._reflectPoints(points.slice(-this._pointsCountAfter), _.last(points))
+            );
+        }
+
+        _reflectPoints(points, origin) {
+            return _.chain(points)
+                .map((point) => [
+                    2 * origin[0] - point[0],
+                    2 * origin[1] - point[1]
+                ])
+                .value()
+                .reverse();
         }
     };
 

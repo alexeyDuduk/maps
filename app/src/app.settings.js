@@ -17,7 +17,7 @@ define(() => {
     return {
         access: {
             server: 'https://route.arcgis.com/arcgis/rest/services',
-            token: 'qAm4OlY9aeAbEDR4tjnSsrQ5OxEahxTVREWxLbdLgwXNzv62aSJdCp6n0qpBmYQLB4mHii7_UztfDw4QVolHKYKmMcS-2A6VbG80jckFjHwfb94zxwluFZhjyu7Zx8zfzdXfrmmNQxWMs14NSwhyVw..'
+            token: '6eG3-sLUxNSiQ3fFAF2Qz3EQAxqk1Goj0A256oExXafSkTuSmVdopD1odgoKBJ5R_dGY9SPb1WeipLMK5FTpgaS2T0bBK6QfalbqEmEr7LEPjUmLtisDSm-0H9zeAyiZfuSRtSR0DHSGvh7vpRU7Gg..'
         },
         locations: {
             PICKUP: 'PICKUP',

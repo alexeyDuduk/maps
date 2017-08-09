@@ -1,16 +1,16 @@
 define([
     'app/app.settings',
-    'app/utils/promiseUtils',
-    'esri/core/watchUtils'
-], (appSettings, PromiseUtils, watchUtils) => {
+    'app/utils/promiseUtils'
+], (appSettings, PromiseUtils) => {
     'use strict';
 
     const settings = appSettings.camera;
 
     return class CameraPromiseDrivenRouteRenderer {
-        constructor(view, segmentRenderer, cameraProvider) {
+        constructor(view, segmentRenderer, cameraProvider, debugRenderer) {
             this._view = view;
             this._segmentRenderer = segmentRenderer;
+            this._debugRenderer = debugRenderer;
             this._cameraProvider = cameraProvider;
             this._index = -1;
             this._segmentsPerCameraPosition = 1;
@@ -18,6 +18,8 @@ define([
 
         draw(segmentGenerator) {
             this._beforeDraw(segmentGenerator);
+
+            this._showPath(segmentGenerator);
 
             return this._moveToInitialScene()
                 .then(() => this._runIntro(segmentGenerator))
@@ -32,10 +34,12 @@ define([
         }
 
         _moveToInitialScene() {
+            console.log('_moveToInitialScene');
             return this._view.goTo(this._cameraProvider.getInitialCamera());
         }
 
         _runIntro(segmentGenerator) {
+            console.log('_runIntro');
             let point = segmentGenerator.getInitialPoint();
             let camera = this._cameraProvider.getCamera(point);
 
@@ -54,12 +58,13 @@ define([
             };
 
             return this._view.goTo(camera).then(() => {
-                this._segmentRenderer.addPath(points);
-                this._segmentRenderer.addPath(pointsInter);
+                //this.debugRenderer.addPath(points);
+                this._debugRenderer.addPath(pointsInter);
             });
         }
 
         _runByRoute (segmentGenerator) {
+            console.log('_runByRoute');
             let goToNext            = () => {};
             let tryGoToNextSegment  = () =>
                 segmentGenerator.moveToNext() ?

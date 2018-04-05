@@ -16,6 +16,9 @@ define([
         }
 
         update(point) {
+            if (!point) {
+               return;
+            }
             this._rememberPoint(point);
             if (this._count > this._segmentsToRemember) {
                 this._forgetFirstPoint();

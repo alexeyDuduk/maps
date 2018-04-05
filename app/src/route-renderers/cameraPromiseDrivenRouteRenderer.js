@@ -10,8 +10,8 @@ define([
         constructor(view, segmentRenderer, cameraProvider, debugRenderer) {
             this._view = view;
             this._segmentRenderer = segmentRenderer;
-            this._debugRenderer = debugRenderer;
             this._cameraProvider = cameraProvider;
+            this._debugRenderer = debugRenderer;
             this._index = -1;
             this._segmentsPerCameraPosition = 1;
         }
@@ -46,8 +46,8 @@ define([
 
         // displays original and interpolated route for testing
         _showPath(segmentGenerator) {
-            let points = segmentGenerator.getPointsSet(950);
-            let pointsInter = this._cameraProvider.getInterpolatedPointsSet(950);
+            let points = segmentGenerator.getPointsSet();
+            let pointsInter = this._cameraProvider.getInterpolatedPointsSet();
 
             let camera = {
                 target: points,

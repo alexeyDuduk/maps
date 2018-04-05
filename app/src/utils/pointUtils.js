@@ -61,16 +61,18 @@ define([], () => {
                 if (index === 0) {
                     return total;
                 }
-                prevPoint = points[index - 1];
-                let x1 = prevPoint[0],
-                    y1 = prevPoint[1],
-                    x2 = point[0],
-                    y2 = point[1];
 
-                return total + (Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)) || 0);
+                return total + (PointUtils.getDistance(points[index - 1], point) || 0);
             }, 0);
 
             return result;
+        }
+
+        static getDistance(point1, point2) {
+            return Math.sqrt(
+                Math.pow(point1[0] - point2[0], 2) +
+                Math.pow(point1[1] - point2[1], 2)
+            );
         }
     };
 });

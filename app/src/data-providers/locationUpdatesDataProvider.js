@@ -1,11 +1,12 @@
 define([
     'esri/request',
     'app/app.settings',
-    'app/data-providers/baseDataProvider'
-], (request, settings, BaseDataProvider) => {
+    'app/data-providers/baseDataProvider',
+    'app/utils/promiseUtils'
+], (request, settings, BaseDataProvider, PromiseUtils) => {
     'use strict';
 
-    return class ProdDataProvider extends BaseDataProvider {
+    return class LocationUpdatesDataProvider extends BaseDataProvider {
         constructor(name) {
             super();
             this._name = name;
@@ -13,8 +14,41 @@ define([
         }
 
         getPoints() {
-            return request(`stubs/points/${this._name}.json`, { responseType: 'json' })
-                .then((response) => _.map(response.data.data, (item) => item.address.gps.coordinates));
+            return PromiseUtils.wrap(request(`stubs/points/${this._name}.json`, { responseType: 'json' }))
+                .then((response) => {
+                // TODO !!!
+                    _.first(response.data.data).internalType = settings.locations.INTERMEDIATE;
+                    _.last(response.data.data).internalType = settings.locations.INTERMEDIATE;
+
+                    return _.map(response.data.data, (item, index, arr) => {
+                        let type = this._getExtertnalType(item);
+                        let pointType = settings.locations.NONE;
+                        let prev = arr[index - 1];
+                        if (prev) {
+                            let prevType = this._getExtertnalType(prev);
+                            if (prevType !== 'at pickup' && prevType !== 'picked up' && (
+                                type === 'at pickup' || type === 'picked up'
+                                )) {
+                                pointType = settings.locations.PICKUP;
+                            }
+                        }
+
+                        return {
+                            geometry: item.address.gps.coordinates,
+                            type: item.internalType || pointType,
+                            displayName: item.address.line1,
+                            id: index
+                        };
+                    });
+                });
+        }
+
+        _getExtertnalType (point) {
+            return _.toLower(point.status.value);
+        }
+
+        extractLocations(points) {
+            return _.filter(points, (point) => point.type);
         }
 
         getLocations() {

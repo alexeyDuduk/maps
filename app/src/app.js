@@ -74,89 +74,95 @@ define([
 
             this.initWatchers();
 
-            let originalDataProvider = new LocationUpdatesDataProvider(`prod-${this.getShipmentId()}`);
-            originalDataProvider = new CachingDataProviderWrapper(originalDataProvider);
-            let dataProvider = new RouteTaskDataProviderWrapper(originalDataProvider);
+            let dataProvider = new LocationUpdatesDataProvider(`prod-${this.getShipmentId()}`);
+            let routeTask = new RouteTaskDataProviderWrapper();
 
-            PromiseUtils.whenAll([
-                originalDataProvider.getPoints(),
-                dataProvider.getPoints(),
-                dataProvider.getLocations()
-            ]).then(([
-                         originalPoints = [],
-                         points = [],
-                         locations = []
-            ]) => {
+            dataProvider.getPoints()
+                .then(data => PromiseUtils.whenAll([
+                    data,
+                    routeTask.getPointsFrom(_.map(data, 'geometry'))
+                ]))
+                .then(([data, points = []]) => {
+                    let locations = dataProvider.extractLocations(data);
+                    console.log('locations', locations);
+                    let originalPoints = [];
 
-                let segmentGenerator = this._createRouteSegmentGenerator(points);
-                let cameraProvider = new CameraProvider(segmentGenerator, locations);
+                    let segmentGenerator = this._createRouteSegmentGenerator(points);
 
-                let map = new Map({
-                    basemap: 'hybrid',
-                    ground: 'world-elevation'
-                });
+                    let first = _.first(data);
+                    first.type = settings.locations.INTERMEDIATE;
 
-                let camera = cameraProvider.getInitialCamera();
-                let view = new SceneView({
-                    center: camera.center,
-                    container: 'view-div',
-                    map: map,
-                    zoom: camera.zoom,
-                    tilt: camera.tilt
-                });
+                    let last = _.last(data);
+                    last.type = settings.locations.INTERMEDIATE;
+                    let cameraProvider = new CameraProvider(segmentGenerator, locations);
 
-                let lineSymbol = new LineSymbol3D({
-                    symbolLayers: [
-                        new LineSymbol3DLayer({
-                            material: {
-                                color: settings.colors.BRAND_PRIMARY
-                            },
-                            size: 6
-                        })
-                    ]
-                });
-
-                let lineAtt = {
-                    Name: 'Keystone Pipeline',
-                    Owner: 'TransCanada',
-                    Length: '3,456 km'
-                };
-
-                let segmentRenderer = new GraphicRouteSegmentRenderer(map, view, lineSymbol, lineAtt);
-                let debugRenderer = new GraphicRouteSegmentRenderer(map, view, new LineSymbol3D({
-                    symbolLayers: [
-                        new LineSymbol3DLayer({
-                            material: {
-                                color: 'red'
-                            },
-                            size: 6
-                        })
-                    ]
-                }), lineAtt);
-
-                let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider);
-
-                let featureRenderer = new FeatureRenderer(map, [settings.locations.PICKUP, settings.locations.DELIVERY]);
-                let luFeatureRenderer = new FeatureRenderer(map, [settings.locations.INTERMEDIATE]);    // real location updates points
-                let originalLuFeatures = this._convertPointsToFeatures(originalPoints);
-
-                view.then(() => {
-                    this._startRendering();
-
-                    featureRenderer.draw(locations);
-                    // luFeatureRenderer.draw(originalLuFeatures);
-                })
-                    .then(() => PromiseUtils.timeout(() => {}, 1000))
-                    .then(() => routeRenderer.draw(segmentGenerator))
-                    .then(() => this._stopRendering())
-                    .otherwise((err) => {
-                        console.log('view.otherwise', err);
-                        eventManager.emit('view:error');
+                    let map = new Map({
+                        basemap: 'hybrid',
+                        ground: 'world-elevation'
                     });
-            });
+
+                    let camera = cameraProvider.getInitialCamera();
+                    let view = new SceneView({
+                        center: camera.center,
+                        container: 'view-div',
+                        map: map,
+                        zoom: camera.zoom,
+                        tilt: camera.tilt
+                    });
+
+                    let lineSymbol = new LineSymbol3D({
+                        symbolLayers: [
+                            new LineSymbol3DLayer({
+                                material: {
+                                    color: settings.colors.BRAND_PRIMARY
+                                },
+                                size: 6
+                            })
+                        ]
+                    });
+
+                    let lineAtt = {
+                        Name: 'Keystone Pipeline',
+                        Owner: 'TransCanada',
+                        Length: '3,456 km'
+                    };
+
+                    let segmentRenderer = new GraphicRouteSegmentRenderer(map, view, lineSymbol, lineAtt);
+                    let debugRenderer = new GraphicRouteSegmentRenderer(map, view, new LineSymbol3D({
+                        symbolLayers: [
+                            new LineSymbol3DLayer({
+                                material: {
+                                    color: 'red'
+                                },
+                                size: 2
+                            })
+                        ]
+                    }), lineAtt);
+
+                    let routeRenderer = new CameraPromiseDrivenRouteRenderer(view, segmentRenderer, cameraProvider, debugRenderer);
+
+                    let featureRenderer = new FeatureRenderer(map, [settings.locations.PICKUP, settings.locations.DELIVERY]);
+                    let luFeatureRenderer = new FeatureRenderer(map, [settings.locations.INTERMEDIATE]);    // real location updates points
+                    let originalLuFeatures = this._convertPointsToFeatures(originalPoints);
+
+                    view.then(() => {
+                        this._startRendering();
+
+                        featureRenderer.draw(locations);
+                        // luFeatureRenderer.draw(originalLuFeatures);
+                    })
+                        .then(() => PromiseUtils.timeout(() => {
+                        }, 1000))
+                        .then(() => routeRenderer.draw(segmentGenerator))
+                        .then(() => this._stopRendering())
+                        .otherwise((err) => {
+                            console.error('view.otherwise', err);
+                            eventManager.emit('view:error');
+                        });
+                });
         }
 
-        _createRouteSegmentGenerator (points) {
+        _createRouteSegmentGenerator(points) {
             return new PointSegmentGenerator(points);
         }
 

@@ -13,10 +13,10 @@ define([
             this._segmentGenerator = segmentGenerator;
 
             this._initCoefficients();
-            this._interpolatedPoints = this.getInterpolatedPointsSet();
 
             this._epsilon = 0.3;
             this._specialPoints = this._getSpecialPoints(specialPoints);
+            this._interpolatedPoints = this.getInterpolatedPointsSet();
             this._lastMinRatio = Infinity;
             this._prevPoint = null;
             this._nextPoint = null;
@@ -48,6 +48,9 @@ define([
 
         getCamera() {
             let point = this._interpolatedPoints[this._segmentGenerator.getCurrentPointIndex() + this._pointsCountBefore];
+            if (!point) {
+                debugger;
+            }
             this._headingStrategy.update(point);
 
             return {
@@ -66,13 +69,21 @@ define([
             };
         }
 
-        _getSpecialPoints(points) {
-            if (!points) {
-                return [];
+        _getSpecialPoints(specialPoints) {
+            _.first(specialPoints).visited = true;
+            return specialPoints;
+            let points = this._segmentGenerator.getPoints();
+            let result = [{
+                geometry: _.first(points),
+                visited: true
+            }];
+            if (specialPoints && specialPoints.length) {
+                result.push.apply(result, specialPoints);
             }
-
-            let result = points.slice();
-            _.first(result).visited = true;
+            result.push({
+                geometry: _.last(points)
+            });
+            console.log('specialPoints', result);
 
             return result;
         }
@@ -91,12 +102,12 @@ define([
                 return minZoom;
             }
 
-            let totalDistance = this._getDistance(this._prevPoint.geometry, this._nextPoint.geometry);
+            let totalDistance = PointUtils.getDistance(this._prevPoint.geometry, this._nextPoint.geometry);
             if (!totalDistance) {
                 return minZoom;
             }
-            let distanceToPrev = this._getDistance(this._prevPoint.geometry, currentPoint);
-            let distanceToNext = this._getDistance(currentPoint, this._nextPoint.geometry);
+            let distanceToPrev = PointUtils.getDistance(this._prevPoint.geometry, currentPoint);
+            let distanceToNext = PointUtils.getDistance(currentPoint, this._nextPoint.geometry);
 
             let distance = Math.min(distanceToPrev, distanceToNext);
             let ratio = distance / totalDistance;
@@ -117,14 +128,6 @@ define([
             return maxZoom + ratio / this._epsilon * (minZoom - maxZoom);
         }
 
-        // TODO: utils
-        _getDistance(point1, point2) {
-            return Math.sqrt(
-                Math.pow(point1[0] - point2[0], 2) +
-                Math.pow(point1[1] - point2[1], 2)
-            );
-        }
-
         // return array of points for interpolated route
         // get array of points for interpolated route from 'simplify'
         // find common points
@@ -135,6 +138,72 @@ define([
             let originalPoints = this._mapWithBufferPoints(
                 this._segmentGenerator.getPoints().slice(0, count)
             );
+            //return this._smooth(originalPoints);
+
+            return _.chain(this._findRanges(originalPoints))
+                .map((range, i, arr) =>  {
+                    console.log('ranges =', arr);
+                    return this._smooth(originalPoints.slice(range.from, range.count));
+                })
+                .flatten()
+                .value();
+        }
+
+        _findRanges(originalPoints) {
+            let specialPointIndex = 0;
+            let lastMinDistance = Infinity;
+            let specialPoints = this._specialPoints;
+            let distanceToNextSpecialPoint = PointUtils.getDistance(
+                specialPoints[0].geometry,
+                specialPoints[1].geometry
+            );
+            let eps = 0.2;
+
+            return _.chain(originalPoints)
+                // find indexes of original points that are the closest to specialPoints
+                // returns array of indexes
+                .reduce((memo, point, pointIndex) => {
+                    if (specialPointIndex >= specialPoints.length) {
+                        return memo;
+                    }
+
+                    let distance = PointUtils.getDistance(point, specialPoints[specialPointIndex].geometry);
+                    if (distance <= distanceToNextSpecialPoint * eps) {
+                        if (distance <= lastMinDistance) {
+                            lastMinDistance = distance;
+                        }
+                        else {
+                            lastMinDistance = Infinity;
+                            memo.push(pointIndex);
+                            specialPointIndex++;
+                            if (specialPointIndex < specialPoints.length) {
+                                distanceToNextSpecialPoint = PointUtils.getDistance(
+                                    specialPoints[specialPointIndex - 1].geometry,
+                                    specialPoints[specialPointIndex].geometry
+                                );
+                            }
+                        }
+                    }
+
+                    return memo;
+                }, [])
+                // map these indexes to ranges, so path will be divided by (indexes.length - 1) parts
+                .map((indexValue, index, arr) => {
+                    console.log('map arr = ', arr);
+                    if (index === arr.length - 1) {
+                        return null;
+                    }
+
+                    return {
+                        from: indexValue,
+                        count: arr[index + 1] - indexValue + 1
+                    };
+                })
+                .filter(range => range)
+                .value();
+        }
+
+        _smooth(originalPoints) {
             let points = originalPoints.map(pair => ({ x: pair[0], y: pair[1] }));
 
             points = simplify(points, settings.camera.INTERPOLATION_PRECISION, true);
@@ -148,6 +217,7 @@ define([
                 return result.concat(PointUtils.fillWithIntermediatePoints([points[index - 1], point], count));
             }, []);
 
+            console.log('filledPoints', filledPoints);
             return filledPoints;
         }
 

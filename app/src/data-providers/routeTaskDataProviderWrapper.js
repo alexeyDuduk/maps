@@ -24,22 +24,19 @@ define([
     const settings = appSettings.routeBuilder;
 
     return class RouteTaskDataProviderWrapper extends BaseDataProvider {
-        constructor(dataProvider) {
+        constructor() {
             super();
-            this._dataProvider = dataProvider;
         }
 
-        getPoints() {
-            return this._dataProvider.getPoints().then(points => {
-                let pathLength = PointUtils.getPathLength(points);
-                // points = PointUtils.fillWithIntermediatePoints(points, 3);
+        getPointsFrom(points) {
+            let pathLength = PointUtils.getPathLength(points);
+            // points = PointUtils.fillWithIntermediatePoints(points, 3);
 
-                if (points.length >= settings.MAX_POINTS_COUNT) {
-                    return points;
-                } else {
-                    return this.filterAndBuildRoute(points);
-                }
-            });
+            if (points.length >= settings.MAX_POINTS_COUNT) {
+                return points;
+            } else {
+                return this.filterAndBuildRoute(points);
+            }
         }
 
         filterAndBuildRoute(points) {
@@ -47,10 +44,6 @@ define([
                 .then(RouteTaskDataProviderWrapper._filterPoints)
                 .then(RouteTaskDataProviderWrapper._buildRoute)
                 .then((response) => _.flatten(response.routeResults[0].route.geometry.paths));
-        }
-
-        getLocations() {
-            return this._dataProvider.getLocations();
         }
 
         static _filterPoints(points) {

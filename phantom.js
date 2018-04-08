@@ -1,4 +1,5 @@
 var page = require('webpage').create();
+var system = require('system');
 
 var rendering = false;
 
@@ -46,6 +47,6 @@ page.viewportSize = { width: 1280, height: 720 };
 
 page.onConsoleMessage = onConsoleMessage;
 
-page.open('http://0.0.0.0:3003', function () {
+page.open('http://0.0.0.0:' + (process.env.PORT || 9996) + '?id=' + system.args[1] + '&key=' + system.args[2], function () {
     // phantom.exit();
 });

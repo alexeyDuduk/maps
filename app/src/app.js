@@ -56,25 +56,28 @@ define([
             eventManager.on('view:error',           () => console.log('phantom:end'));
         }
 
-        getShipmentId () {
+        getParams () {
             let id = '1';
             let search = window.location.search;
             if (search) {
-                let params = new URLSearchParams(search.substring(1));
+                let params = new URLSearchParams(search);
                 id = params.get('id') || id;
+                let key = params.get('key');
+
+                return { id, key };
             }
-            return id;
         }
 
         init () {
+            let { id, key } = this.getParams();
             IdentityManager.registerToken({
                 server: settings.access.server,
-                token: settings.access.token
+                token: key
             });
 
             this.initWatchers();
 
-            let dataProvider = new LocationUpdatesDataProvider(`prod-${this.getShipmentId()}`);
+            let dataProvider = new LocationUpdatesDataProvider(`prod-${id}`);
             let routeTask = new RouteTaskDataProviderWrapper();
 
             dataProvider.getPoints()
@@ -149,7 +152,7 @@ define([
                         this._startRendering();
 
                         featureRenderer.draw(locations);
-                        // luFeatureRenderer.draw(originalLuFeatures);
+                        //luFeatureRenderer.draw(originalLuFeatures);
                     })
                         .then(() => PromiseUtils.timeout(() => {
                         }, 1000))

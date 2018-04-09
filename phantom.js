@@ -1,5 +1,6 @@
 var page = require('webpage').create();
 var system = require('system');
+var num = 0;
 
 var rendering = false;
 
@@ -19,6 +20,7 @@ var screenshot = function (delay) {
 var render = function () {
     if (rendering) {
         page.render('/dev/stdout', { format: "png" });
+        //page.render('logs/' + num + '.png', { format: "png" });
     }
 };
 
@@ -47,6 +49,6 @@ page.viewportSize = { width: 1280, height: 720 };
 
 page.onConsoleMessage = onConsoleMessage;
 
-page.open('http://0.0.0.0:' + (process.env.PORT || 9996) + '?id=' + system.args[1] + '&key=' + system.args[2], function () {
+page.open('http://localhost:' + system.args[3] + '?id=' + system.args[1] + '&key=' + system.args[2], function () {
     // phantom.exit();
 });

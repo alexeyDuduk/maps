@@ -60,9 +60,9 @@ define([
             let id = '1';
             let search = window.location.search;
             if (search) {
-                let params = new URLSearchParams(search);
-                id = params.get('id') || id;
-                let key = params.get('key');
+                let params = search.split('&');
+                id = params[0].split('=')[1];
+                let key = params[1].split('=')[1];
 
                 return { id, key };
             }

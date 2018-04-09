@@ -4,20 +4,21 @@ const path      = require('path');
 let start = (hash, key, resolve, reject) => {
 
     const fileName  = 'phantom.js';
-    const framerate = 30;
+    const framerate = 1;
     const duration  = 30;//240;
     const destPath  = 'videos/';
     const videoName = `video-${hash}.mp4`;
     const fullPath  = path.join(destPath, videoName);
+    const port = process.env.PORT || 9996;
 
     let command = [
-        `phantomjs ${fileName} ${hash} ${key}`,
-        `| ffmpeg -y -c:v png -f image2pipe -r ${framerate} -t ${duration}`,
-        '-analyzeduration 2147483647 -probesize 2147483647',
-        `-i - -c:v libx264 -pix_fmt yuv420p -movflags +faststart`,
+        `phantomjs ${fileName} ${hash} ${key} ${port}`,
+        `| ffmpeg -y -c:v png -f image2pipe -framerate ${framerate} -t ${duration}`,
+        //'-analyzeduration 2147483647 -probesize 2147483647',
+        `-i - -c:v libx264 -pix_fmt yuv420p -movflags +faststart -r 25`,
         `${fullPath}`
     ].join(' ');
-    // phantomjs phantom.js f18eb830-3aa4-11e8-865e-55b7a8e7d166 9cxT4o-PgGm19tZp1pvEKKmN0d1y0zY_reNzxvdrhBPB_vKtx4Ef5ETo_I2HS31Vh6JPVZHCWjl9EnnQbvdh04l-u9_ghW4et7EgKa361B0ElCogo8VYLvFJT-HR57sDrD33tIuRUm6Pw-cYBmkkpg.. | ffmpeg -y -c:v png -f image2pipe -r 30 -t 30 -analyzeduration 2147483647 -probesize 2147483647 -i - -c:v libx264 -pix_fmt yuv420p -movflags +faststart f:\turvo\esri-maps\maps\videos\video-1.mp4
+    // phantomjs phantom.js 1 g1VvrKDyBQx0OPVAtfFsSLmK8duD1wzWueKy1UuH-FZomXLCvQRV662-ywNkLwyHh1y0pJF4MgPL4VfdfRfKbYq0jItDPU1vFJDw7KGTHPAM2P43IvPpQ7woaJudzH91tLOXWWuGgxlgYTV7UJPOrQ.. | ffmpeg -y -c:v png -f image2pipe -r 30 -t 30 -analyzeduration 2147483647 -probesize 2147483647 -i - -c:v libx264 -pix_fmt yuv420p -movflags +faststart f:\turvo\esri-maps\maps\videos\video-1.mp4
 
     //command = `cp data/points-${hash}.json ${fullPath}`;
 
